@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Infinity Vogt Solar Services — solar PV operations, maintenance and performance support.">
+  <title>IVSS — Powering with Nature</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Navbar: same structure as the IVSS homepage -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html" aria-label="IVSS home">
+        <span class="brand-mark"><img src="./logo.png" alt=""></span>
+        <span>IVSS<span class="d-block fw-normal small"
+            style="font-size:.65rem;color:var(--ivss-muted);letter-spacing:0" data-i18n="brandSub">Infinity Vogt Solar
+            Services</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2" style="color:var(--ivss-ink)"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html" data-i18n="navAbout">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./services.html" data-i18n="navServices">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./projects.html" data-i18n="navProjects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./products.html" data-i18n="navProducts">Products</a>
+          </li>
+
+          <li class="nav-item d-flex gap-2 mt-3 mt-lg-0">
+            <button id="langToggle" class="icon-btn" type="button" aria-label="Switch language" title="Switch language">
+              <span class="fw-bold small">ع</span>
+            </button>
+            <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode"
+              title="Toggle dark mode">
+              <i class="bi bi-moon-stars"></i>
+            </button>
+          </li>
+
+          <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
+            <a class="btn btn-ivss" href="#contact" data-i18n="navContact">
+              Contact us <i class="bi bi-arrow-up-right ms-1"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+    <!-- Hero Section  -->
+    <section class="hero" id="home">
+      <div class="container position-relative">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="reveal">
+              <span class="eyebrow"><span class="dot"></span><span data-i18n="heroEyebrow">Solar operations. Smarter
+                  performance.</span></span>
+              <h1 data-i18n-html="heroTitle">Powering a brighter future, <span class="text-gradient">naturally.</span>
+              </h1>
+              <p class="hero-copy" data-i18n="heroCopy">Reliable solar operations and maintenance that help keep your
+                assets safe, efficient, and performing at their best.</p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="#services" class="btn btn-ivss" data-i18n="heroCta">Explore our services <i
+                    class="bi bi-arrow-up-right ms-1"></i></a>
+                <a href="#about" class="btn btn-outline-ivss" data-i18n="heroSecondary">Discover IVSS</a>
+              </div>
+              <div class="d-flex align-items-center gap-3 mt-4 pt-2">
+                <div class="d-flex">
+                  <span class="brand-mark" style="width:34px;height:34px;border-radius:50%;font-size:.9rem"><i
+                      class="bi bi-lightning-charge"></i></span>
+                </div>
+                <div><strong class="d-block small" data-i18n="heroTrust">Focused on safe, dependable
+                    operations</strong><span class="small" style="color:var(--ivss-muted)" data-i18n="heroTrustSub">From
+                    daily monitoring to specialist field work</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal delay-2">
+            <div class="hero-visual solar-animation-frame">
+              <canvas id="solarStoryCanvas" class="solar-story-canvas" width="680" height="440"
+                aria-hidden="true"></canvas>
+              <div id="solarStoryLabel" class="solar-story-label" aria-hidden="true">DAY MODE · SOLAR PANELS CHARGING
+              </div>
+              <div class="floating-stat"><strong>230 MWp</strong><span data-i18n="heroStat">DC installed capacity stated
+                  in company profile</span></div>
+              <div class="visual-caption">
+                <div><small class="d-block mb-1" data-i18n="heroCaptionLabel">Our focus</small><strong class="fs-5"
+                    data-i18n="heroCaption">Performance that lasts</strong></div>
+                <i class="bi bi-arrow-up-right fs-3"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section  -->
+    <section class="stat-band">
+      <div class="container">
+        <div class="row text-center g-0">
+          <div class="col-6 col-lg-3 stat-item reveal">
+            <div class="stat-number"><span data-count="2018">2018</span></div>
+            <div class="stat-label" data-i18n="statFounded">Established</div>
+          </div>
+          <div class="col-6 col-lg-3 stat-item reveal delay-1">
+            <div class="stat-number"><span data-count="230">230</span><small class="fs-5"> MWp</small></div>
+            <div class="stat-label" data-i18n="statDc">DC installed capacity</div>
+          </div>
+          <div class="col-6 col-lg-3 stat-item reveal delay-2">
+            <div class="stat-number"><span data-count="190">190</span><small class="fs-5"> MW</small></div>
+            <div class="stat-label" data-i18n="statAc">Active power delivered to grid*</div>
+          </div>
+          <div class="col-6 col-lg-3 stat-item reveal delay-3">
+            <div class="stat-number"><span data-count="77">77</span></div>
+            <div class="stat-label" data-i18n="statInverters">Central inverter units</div>
+          </div>
+        </div>
+        <p class="text-center small mb-3" style="color:var(--ivss-muted)" data-i18n="statsNote">*Figures reported in the
+          February 2026 company portfolio.</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 reveal">
+            <span class="section-kicker" data-i18n="aboutKicker">Who we are</span>
+            <h2 class="section-title" data-i18n-html="aboutTitle">Keeping solar assets <span class="text-gradient">safe
+                and productive.</span></h2>
+            <p class="section-copy" data-i18n="aboutCopy">Founded in December 2018, Infinity Vogt Solar Services focuses
+              on the operation and maintenance of grid-connected solar power plants, supporting reliable generation and
+              long-term asset care.</p>
+            <a class="btn btn-outline-ivss mt-3" href="#contact" data-i18n="aboutCta">Let’s work together <i
+                class="bi bi-arrow-up-right ms-1"></i></a>
+          </div>
+          <div class="col-lg-7">
+            <div class="soft-panel reveal delay-1">
+              <div class="row g-4">
+                <div class="col-sm-6">
+                  <div class="service-icon"><i class="bi bi-bullseye"></i></div>
+                  <h3 class="fw-bold" data-i18n="visionTitle">Our vision</h3>
+                  <p class="mb-0" style="color:var(--ivss-muted);line-height:1.8" data-i18n="visionCopy">Ensure proper
+                    and safe operation across the solar assets we support.</p>
+                </div>
+                <div class="col-sm-6">
+                  <div class="service-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                  <h3 class="fw-bold" data-i18n="missionTitle">Our mission</h3>
+                  <p class="mb-0" style="color:var(--ivss-muted);line-height:1.8" data-i18n="missionCopy">Optimize
+                    energy generation, manage asset degradation, and sustain the forecast performance ratio.</p>
+                </div>
+              </div>
+              <hr class="my-4" style="border-color:var(--ivss-line)">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="service-icon mb-0 flex-shrink-0"><i class="bi bi-shield-check"></i></div>
+                <div>
+                  <h3 class="fw-bold mb-1" data-i18n="principleTitle">Built around responsible operations</h3>
+                  <p class="mb-0" style="color:var(--ivss-muted);line-height:1.8" data-i18n="principleCopy">Technical
+                    quality, clear reporting, safety practices, and coordinated field teams work together to support
+                    plant performance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section pt-0" id="services">
+      <div class="container">
+        <div class="text-center mx-auto mb-5 reveal" style="max-width:700px">
+          <span class="section-kicker" data-i18n="servicesKicker">What we do</span>
+          <h2 class="section-title" data-i18n-html="servicesTitle">Specialist services for <span
+              class="text-gradient">solar performance.</span></h2>
+          <p class="section-copy mx-auto" data-i18n="servicesCopy">A practical, multidisciplinary approach to keeping
+            solar plants running safely and reliably.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4 reveal">
+            <article class="service-card">
+              <div class="service-icon"><i class="bi bi-activity"></i></div>
+              <h3 data-i18n="svc1Title">Operations & monitoring</h3>
+              <p data-i18n="svc1Copy">Monitor plant performance, review operating data, track inverter losses, and
+                support consistent energy generation.</p><a href="#contact" class="fw-bold small"
+                style="color:var(--ivss-green)" data-i18n="learnMore">Learn more <i
+                  class="bi bi-arrow-up-right ms-1"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal delay-1">
+            <article class="service-card">
+              <div class="service-icon"><i class="bi bi-tools"></i></div>
+              <h3 data-i18n="svc2Title">Electrical maintenance</h3>
+              <p data-i18n="svc2Copy">Preventive and corrective maintenance for inverters, grid delivery points,
+                electrical equipment, and related systems.</p><a href="#contact" class="fw-bold small"
+                style="color:var(--ivss-green)" data-i18n="learnMore">Learn more <i
+                  class="bi bi-arrow-up-right ms-1"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal delay-2">
+            <article class="service-card">
+              <div class="service-icon"><i class="bi bi-gear-wide-connected"></i></div>
+              <h3 data-i18n="svc3Title">Mechanical maintenance</h3>
+              <p data-i18n="svc3Copy">Maintenance of tracker systems, suspension components, and other mechanical parts
+                across solar sites.</p><a href="#contact" class="fw-bold small" style="color:var(--ivss-green)"
+                data-i18n="learnMore">Learn more <i class="bi bi-arrow-up-right ms-1"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal">
+            <article class="service-card">
+              <div class="service-icon"><i class="bi bi-droplet"></i></div>
+              <h3 data-i18n="svc4Title">PV module cleaning</h3>
+              <p data-i18n="svc4Copy">Dry and wet cleaning solutions, including tractor-supported Sunbrush equipment,
+                based on site needs.</p><a href="#contact" class="fw-bold small" style="color:var(--ivss-green)"
+                data-i18n="learnMore">Learn more <i class="bi bi-arrow-up-right ms-1"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal delay-1">
+            <article class="service-card">
+              <div class="service-icon"><i class="bi bi-camera"></i></div>
+              <h3 data-i18n="svc5Title">Testing & thermography</h3>
+              <p data-i18n="svc5Copy">Specialist support including thermal inspection, inverter testing, commissioning,
+                and module repair activities.</p><a href="#contact" class="fw-bold small"
+                style="color:var(--ivss-green)" data-i18n="learnMore">Learn more <i
+                  class="bi bi-arrow-up-right ms-1"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal delay-2">
+            <article class="service-card">
+              <div class="service-icon"><i class="bi bi-shield-check"></i></div>
+              <h3 data-i18n="svc6Title">HSE & reporting</h3>
+              <p data-i18n="svc6Copy">Site safety training, work-permit coordination, risk monitoring, and daily,
+                weekly, and monthly reporting.</p><a href="#contact" class="fw-bold small"
+                style="color:var(--ivss-green)" data-i18n="learnMore">Learn more <i
+                  class="bi bi-arrow-up-right ms-1"></i></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="section pt-0" id="safety">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 reveal">
+            <div class="rounded-5 overflow-hidden position-relative" style="min-height:420px;background:#153c2a">
+              <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85"
+                alt="Renewable energy landscape"
+                style="position:absolute;width:100%;height:100%;object-fit:cover;inset:0">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(6,30,18,.58))">
+              </div>
+              <div class="position-absolute bottom-0 start-0 p-4 p-lg-5 text-white">
+                <span class="badge rounded-pill text-bg-light mb-3" style="color:#147d53!important"
+                  data-i18n="safetyBadge">Safety first</span>
+                <h3 class="fw-bold display-6" data-i18n="safetyImageTitle">Every task starts with responsibility.</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal delay-1">
+            <span class="section-kicker" data-i18n="safetyKicker">Health, safety & environment</span>
+            <h2 class="section-title" data-i18n-html="safetyTitle">Protecting people, <span class="text-gradient">sites
+                and assets.</span></h2>
+            <p class="section-copy" data-i18n="safetyCopy">The company portfolio describes a structured HSE approach
+              built around site induction, regular training, emergency drills, activity monitoring, and reporting.</p>
+            <div class="check-line"><i class="bi bi-check-circle-fill"></i><span data-i18n="safety1">Safety induction
+                for visitors and site teams</span></div>
+            <div class="check-line"><i class="bi bi-check-circle-fill"></i><span data-i18n="safety2">Scheduled HSE
+                training and emergency simulations</span></div>
+            <div class="check-line"><i class="bi bi-check-circle-fill"></i><span data-i18n="safety3">Risk monitoring and
+                permit-to-work coordination</span></div>
+            <div class="check-line"><i class="bi bi-check-circle-fill"></i><span data-i18n="safety4">Daily, weekly and
+                monthly HSE reports</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-5 reveal">
+          <div><span class="section-kicker" data-i18n="projectsKicker">Selected project experience</span>
+            <h2 class="section-title mb-0" data-i18n-html="projectsTitle">Experience across <span
+                class="text-gradient">solar sites.</span></h2>
+          </div>
+          <p class="section-copy mb-0" style="max-width:430px" data-i18n="projectsCopy">Examples of sites and project
+            opportunities mentioned in the company portfolio dated February 2026.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4 reveal">
+            <article class="project-card">
+              <div class="project-art"><img
+                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80"
+                  alt="Solar photovoltaic plant"></div>
+              <div class="project-content"><span class="tag" data-i18n="projectTagOandM">O&M</span>
+                <h3 class="h5 fw-bold mt-3" data-i18n="project1Title">Benban Solar Park</h3>
+                <p data-i18n="project1Copy">The portfolio references multiple Infinity-related sites in Egypt’s Benban
+                  solar park.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal delay-1">
+            <article class="project-card">
+              <div class="project-art"><img
+                  src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=80"
+                  alt="Solar energy infrastructure"></div>
+              <div class="project-content"><span class="tag" data-i18n="projectTagPipeline">Pipeline</span>
+                <h3 class="h5 fw-bold mt-3" data-i18n="project2Title">Minya PV project</h3>
+                <p data-i18n="project2Copy">A 1,000 MW project opportunity is listed in the February 2026 portfolio as
+                  execution support and O&M services.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal delay-2">
+            <article class="project-card">
+              <div class="project-art"><img
+                  src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=80"
+                  alt="Renewable energy site"></div>
+              <div class="project-content"><span class="tag" data-i18n="projectTagPipeline">Pipeline</span>
+                <h3 class="h5 fw-bold mt-3" data-i18n="project3Title">Misrata PV project</h3>
+                <p data-i18n="project3Copy">A 500 MW solar project in Misrata, Libya, is listed with O&M services in the
+                  portfolio pipeline.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <p class="small mt-3" style="color:var(--ivss-muted)" data-i18n="projectNote">Pipeline items reflect how they
+          were described in the February 2026 portfolio and should not be interpreted as confirmation of completion or
+          current contract status.</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section pt-0">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="row align-items-center g-4 position-relative" style="z-index:1">
+            <div class="col-lg-8"><span class="section-kicker" style="color:var(--ivss-lime)"
+                data-i18n="ctaKicker">Let’s build dependable performance</span>
+              <h2 class="section-title text-white" data-i18n="ctaTitle">Have a solar project in mind?</h2>
+              <p class="section-copy mb-0" data-i18n="ctaCopy">Talk to our team about operations, maintenance, and
+                specialist solar field services.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end"><a href="#contact" class="btn btn-light rounded-pill fw-bold px-4 py-3"
+                style="color:#147d53" data-i18n="ctaButton">Start a conversation <i
+                  class="bi bi-arrow-up-right ms-1"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section pt-0" id="contact">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5 reveal">
+            <span class="section-kicker" data-i18n="contactKicker">Get in touch</span>
+            <h2 class="section-title" data-i18n-html="contactTitle">Let’s talk <span class="text-gradient">solar.</span>
+            </h2>
+            <p class="section-copy" data-i18n="contactCopy">Share a few details and outline what kind of solar
+              operations or technical support you’re looking for.</p>
+            <div class="d-flex gap-3 align-items-center mt-4">
+              <div class="service-icon mb-0"><i class="bi bi-envelope"></i></div>
+              <div><strong class="d-block" data-i18n="contactEmailLabel">Email</strong><span
+                  style="color:var(--ivss-muted)" data-i18n="contactEmailNote">Add the company’s verified contact email
+                  before publishing.</span></div>
+            </div>
+            <div class="d-flex gap-3 align-items-center mt-3">
+              <div class="service-icon mb-0"><i class="bi bi-geo-alt"></i></div>
+              <div><strong class="d-block" data-i18n="contactLocationLabel">Location</strong><span
+                  style="color:var(--ivss-muted)" data-i18n="contactLocation">Egypt · Project locations as listed in the
+                  company portfolio</span></div>
+            </div>
+          </div>
+          <div class="col-lg-7 reveal delay-1">
+            <form id="contactForm" class="soft-panel">
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-label fw-semibold" for="name" data-i18n="formName">Full
+                    name</label><input class="form-control contact-field" id="name" name="name" required
+                    autocomplete="name" placeholder="Jane Smith" data-i18n-placeholder="formNamePlaceholder"></div>
+                <div class="col-md-6"><label class="form-label fw-semibold" for="email" data-i18n="formEmail">Work
+                    email</label><input class="form-control contact-field" id="email" name="email" type="email" required
+                    autocomplete="email" placeholder="you@company.com" data-i18n-placeholder="formEmailPlaceholder">
+                </div>
+                <div class="col-12"><label class="form-label fw-semibold" for="service" data-i18n="formService">What can
+                    we help with?</label><select class="form-select contact-field" id="service" name="service">
+                    <option value="om" data-i18n="formOption1">Operations & maintenance</option>
+                    <option value="cleaning" data-i18n="formOption2">PV module cleaning</option>
+                    <option value="testing" data-i18n="formOption3">Testing & commissioning</option>
+                    <option value="hse" data-i18n="formOption4">HSE and site support</option>
+                    <option value="other" data-i18n="formOption5">Other inquiry</option>
+                  </select></div>
+                <div class="col-12"><label class="form-label fw-semibold" for="message"
+                    data-i18n="formMessage">Message</label><textarea class="form-control contact-field" id="message"
+                    name="message" rows="4" required placeholder="Tell us a little about your project..."
+                    data-i18n-placeholder="formMessagePlaceholder"></textarea></div>
+                <div class="col-12 d-flex flex-wrap align-items-center gap-3"><button class="btn btn-ivss" type="submit"
+                    data-i18n="formSubmit">Prepare inquiry <i class="bi bi-arrow-up-right ms-1"></i></button><span
+                    class="small" style="color:var(--ivss-muted)" data-i18n="formNote">Demo form — connect an email or
+                    CRM service before launch.</span></div>
+                <div class="col-12">
+                  <div id="formFeedback" class="small fw-semibold" role="status" aria-live="polite"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section  -->
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <a class="navbar-brand" href="#home"><span class="brand-mark"
+          style="width:34px;height:34px;border-radius:11px;font-size:.9rem"><img src="./logo.png"
+            alt=""></span><span>IVSS</span></a>
+      <span data-i18n="footerTag">Powering with Nature</span>
+      <span>© <span id="year"></span> IVSS. <span data-i18n="footerRights">All rights reserved.</span></span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

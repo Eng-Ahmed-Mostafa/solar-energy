@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IVSS Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#" aria-label="IVSS dashboard home">
+      <span class="brand-mark">V</span>
+      <span><span class="brand-title">IVSS</span><span class="brand-sub d-block" data-i18n="brandSub">INFINITY VOGT SOLAR SERVICES</span></span>
+    </a>
+    <div class="nav-label" data-i18n="overview">Overview</div>
+    <nav class="side-nav" aria-label="Main navigation">
+      <a href="./index.html" class="side-link active" data-section="dashboard"><i class="bi bi-grid-1x2"></i><span data-i18n="dashboard">Dashboard</span></a>
+      <a href="./projects.html" class="side-link" data-section="projects"><i class="bi bi-buildings"></i><span data-i18n="projects">Projects</span><span class="side-count">12</span></a>
+      <a href="#services" class="side-link" data-section="services"><i class="bi bi-sun"></i><span data-i18n="services">Services</span></a>
+      <a href="#messages" class="side-link" data-section="messages"><i class="bi bi-chat-left-text"></i><span data-i18n="messages">Inquiries</span><span class="side-count">4</span></a>
+      <a href="#clients" class="side-link" data-section="clients"><i class="bi bi-people"></i><span data-i18n="clients">Clients</span></a>
+    </nav>
+    <div class="nav-label mt-3" data-i18n="manage">Manage</div>
+    <nav class="side-nav">
+      <a href="#content" class="side-link" data-section="content"><i class="bi bi-file-earmark-text"></i><span data-i18n="content">Website content</span></a>
+      <a href="#analytics" class="side-link" data-section="analytics"><i class="bi bi-bar-chart-line"></i><span data-i18n="analytics">Analytics</span></a>
+      <a href="#settings" class="side-link" data-section="settings"><i class="bi bi-gear"></i><span data-i18n="settings">Settings</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="support-card">
+        <strong data-i18n="needHelp">Need a hand?</strong>
+        <p data-i18n="supportText">Manage your website with confidence. Contact your technical team for support.</p>
+        <a href="mailto:info@ivss.example" data-i18n="contactSupport">CONTACT SUPPORT <i class="bi bi-arrow-up-right"></i></a>
+      </div>
+      <div class="admin-mini">
+        <div class="avatar">AM</div>
+        <div class="flex-grow-1"><strong data-i18n="adminName">Admin Manager</strong><small data-i18n="superAdmin">Super Admin</small></div>
+        <button class="table-action text-white" aria-label="Account menu"><i class="bi bi-three-dots-vertical"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main" id="dashboard">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="icon-button mobile-menu" id="menuToggle" aria-label="Open navigation"><i class="bi bi-list fs-5"></i></button>
+        <div><div class="page-eyebrow"><span data-i18n="breadcrumb">Workspace</span> / <span data-i18n="dashboard">Dashboard</span></div><h1 data-i18n="dashboard">Dashboard</h1></div>
+      </div>
+      <div class="top-actions">
+        <label class="searchbox"><i class="bi bi-search"></i><input id="globalSearch" type="search" placeholder="Search projects, clients..." data-i18n-placeholder="searchPlaceholder"></label>
+        <button class="icon-button" id="langToggle" title="Switch language" aria-label="Switch language"><span class="fw-bold small">ع</span></button>
+        <button class="icon-button" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+        <button class="icon-button" id="notificationButton" title="Notifications" aria-label="Notifications"><i class="bi bi-bell"></i><span class="notification-dot"></span></button>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="welcome-row">
+        <div><h2 data-i18n="welcome">Good evening, Admin 👋</h2><p data-i18n="welcomeSub">Here’s what’s happening with your solar business today.</p></div>
+        <div class="welcome-actions d-flex gap-2">
+          <button class="btn-soft" id="exportButton"><i class="bi bi-download me-1"></i><span data-i18n="export">Export report</span></button>
+          <button class="btn-ivss" id="addProjectButton"><i class="bi bi-plus-lg"></i><span data-i18n="addProject">Add project</span></button>
+        </div>
+      </section>
+
+      <section class="row g-3" aria-label="Business summary">
+        <div class="col-6 col-xl-3"><article class="stat-card"><div class="stat-top"><span class="stat-label" data-i18n="totalProjects">Total projects</span><span class="stat-icon icon-green"><i class="bi bi-buildings"></i></span></div><div class="stat-value">128</div><div class="stat-foot"><span class="trend-up"><i class="bi bi-arrow-up-right"></i> 12.8%</span><span data-i18n="vsLastMonth">vs last month</span></div></article></div>
+        <div class="col-6 col-xl-3"><article class="stat-card"><div class="stat-top"><span class="stat-label" data-i18n="activeClients">Active clients</span><span class="stat-icon icon-blue"><i class="bi bi-people"></i></span></div><div class="stat-value">86</div><div class="stat-foot"><span class="trend-up"><i class="bi bi-arrow-up-right"></i> 8.2%</span><span data-i18n="vsLastMonth">vs last month</span></div></article></div>
+        <div class="col-6 col-xl-3"><article class="stat-card"><div class="stat-top"><span class="stat-label" data-i18n="newInquiries">New inquiries</span><span class="stat-icon icon-yellow"><i class="bi bi-chat-square-dots"></i></span></div><div class="stat-value">24</div><div class="stat-foot"><span class="trend-up"><i class="bi bi-arrow-up-right"></i> 4.6%</span><span data-i18n="vsLastMonth">vs last month</span></div></article></div>
+        <div class="col-6 col-xl-3"><article class="stat-card"><div class="stat-top"><span class="stat-label" data-i18n="siteVisits">Website visits</span><span class="stat-icon icon-purple"><i class="bi bi-graph-up-arrow"></i></span></div><div class="stat-value">8,642</div><div class="stat-foot"><span class="trend-down"><i class="bi bi-arrow-down-right"></i> 2.1%</span><span data-i18n="vsLastMonth">vs last month</span></div></article></div>
+      </section>
+
+      <section class="row g-3 mt-1" id="analytics">
+        <div class="col-12 col-xl-8"><article class="panel h-100"><div class="panel-head"><div><h3 class="panel-title" data-i18n="performance">Business performance</h3><p class="panel-subtitle" data-i18n="performanceSub">Project inquiries and completed projects over time</p></div><select class="select-sm" id="chartRange" aria-label="Chart date range"><option value="6" data-i18n="last6">Last 6 months</option><option value="12" data-i18n="last12">Last 12 months</option></select></div><div class="chart-wrap"><canvas id="performanceChart" aria-label="Business performance chart"></canvas></div></article></div>
+        <div class="col-12 col-xl-4"><article class="panel h-100"><div class="panel-head"><div><h3 class="panel-title" data-i18n="projectProgress">Project progress</h3><p class="panel-subtitle" data-i18n="projectProgressSub">Current priority projects</p></div><a href="#projects" class="small fw-bold" style="color:var(--ivss-green)" data-i18n="viewAll">View all</a></div>
+          <div class="project-list">
+            <div class="project-row"><div class="project-thumb" style="background:#e4f5e9;color:#16845b"><i class="bi bi-sun"></i></div><div class="project-info"><strong data-i18n="projectOne">Cairo Solar Farm</strong><small data-i18n="utilityScale">Utility-scale solar</small></div><div class="project-progress"><div class="progress"><div class="progress-bar" style="width:78%"></div></div><div class="progress-label">78%</div></div></div>
+            <div class="project-row"><div class="project-thumb" style="background:#e6efff;color:#3978c6"><i class="bi bi-buildings"></i></div><div class="project-info"><strong data-i18n="projectTwo">New Capital Offices</strong><small data-i18n="commercial">Commercial installation</small></div><div class="project-progress"><div class="progress"><div class="progress-bar" style="width:54%"></div></div><div class="progress-label">54%</div></div></div>
+            <div class="project-row"><div class="project-thumb" style="background:#fff0d9;color:#b67b12"><i class="bi bi-house"></i></div><div class="project-info"><strong data-i18n="projectThree">Alexandria Residence</strong><small data-i18n="residential">Residential solar</small></div><div class="project-progress"><div class="progress"><div class="progress-bar" style="width:32%"></div></div><div class="progress-label">32%</div></div></div>
+            <div class="project-row"><div class="project-thumb" style="background:#f0e8ff;color:#8758c6"><i class="bi bi-lightning-charge"></i></div><div class="project-info"><strong data-i18n="projectFour">Delta Industrial Plant</strong><small data-i18n="industrial">Industrial power</small></div><div class="project-progress"><div class="progress"><div class="progress-bar" style="width:91%"></div></div><div class="progress-label">91%</div></div></div>
+          </div>
+        </article></div>
+      </section>
+
+      <section class="row g-3 mt-1">
+        <div class="col-12 col-xl-7" id="messages"><article class="panel table-panel"><div class="panel-head"><div><h3 class="panel-title" data-i18n="recentInquiries">Recent inquiries</h3><p class="panel-subtitle" data-i18n="recentInquiriesSub">Latest messages submitted through your website</p></div><a href="#messages" class="small fw-bold" style="color:var(--ivss-green)" data-i18n="viewAll">View all</a></div>
+          <div class="table-responsive"><table class="table" id="inquiriesTable"><thead><tr><th data-i18n="client">Client</th><th data-i18n="service">Service</th><th data-i18n="date">Date</th><th data-i18n="status">Status</th><th></th></tr></thead><tbody>
+            <tr><td><div class="client"><span class="avatar" style="background:#dcecfb;color:#2c5e91">MK</span><span><strong>Mohamed Khaled</strong><small>m.khaled@example.com</small></span></div></td><td data-i18n="solarInstallation">Solar installation</td><td>25 Oct 2026</td><td><span class="status status-new" data-i18n="new">New</span></td><td><button class="table-action" aria-label="View inquiry"><i class="bi bi-arrow-up-right"></i></button></td></tr>
+            <tr><td><div class="client"><span class="avatar" style="background:#f9e4d9;color:#8a5135">SA</span><span><strong>Salma Adel</strong><small>salma.a@example.com</small></span></div></td><td data-i18n="maintenance">Maintenance</td><td>24 Oct 2026</td><td><span class="status status-progress" data-i18n="inReview">In review</span></td><td><button class="table-action" aria-label="View inquiry"><i class="bi bi-arrow-up-right"></i></button></td></tr>
+            <tr><td><div class="client"><span class="avatar" style="background:#e6e0fb;color:#5f4b99">YA</span><span><strong>Youssef Ahmed</strong><small>y.ahmed@example.com</small></span></div></td><td data-i18n="consulting">Energy consulting</td><td>23 Oct 2026</td><td><span class="status status-review" data-i18n="contacted">Contacted</span></td><td><button class="table-action" aria-label="View inquiry"><i class="bi bi-arrow-up-right"></i></button></td></tr>
+            <tr><td><div class="client"><span class="avatar" style="background:#dff3e5;color:#236747">NH</span><span><strong>Nour Hassan</strong><small>nour.h@example.com</small></span></div></td><td data-i18n="systemDesign">System design</td><td>22 Oct 2026</td><td><span class="status status-done" data-i18n="completed">Completed</span></td><td><button class="table-action" aria-label="View inquiry"><i class="bi bi-arrow-up-right"></i></button></td></tr>
+          </tbody></table><div class="empty-state" id="emptyState" data-i18n="noResults">No inquiries match your search.</div></div>
+        </article></div>
+        <div class="col-12 col-xl-5"><article class="panel h-100"><div class="panel-head"><div><h3 class="panel-title" data-i18n="activity">Recent activity</h3><p class="panel-subtitle" data-i18n="activitySub">Latest updates from your team</p></div><button class="table-action" aria-label="More activity"><i class="bi bi-three-dots"></i></button></div>
+          <div class="activity-list">
+            <div class="activity-item"><span class="activity-icon icon-green"><i class="bi bi-check2-circle"></i></span><div class="activity-text"><strong data-i18n="activity1Title">Project status updated</strong><div data-i18n="activity1Text">Cairo Solar Farm moved to installation phase.</div><span class="activity-time" data-i18n="twoHours">2 hours ago</span></div></div>
+            <div class="activity-item"><span class="activity-icon icon-blue"><i class="bi bi-person-plus"></i></span><div class="activity-text"><strong data-i18n="activity2Title">New client inquiry</strong><div data-i18n="activity2Text">Mohamed Khaled requested a solar installation quote.</div><span class="activity-time" data-i18n="fourHours">4 hours ago</span></div></div>
+            <div class="activity-item"><span class="activity-icon icon-yellow"><i class="bi bi-file-earmark-check"></i></span><div class="activity-text"><strong data-i18n="activity3Title">Website content published</strong><div data-i18n="activity3Text">The commercial solar service page was updated.</div><span class="activity-time" data-i18n="yesterday">Yesterday</span></div></div>
+            <div class="activity-item"><span class="activity-icon icon-purple"><i class="bi bi-images"></i></span><div class="activity-text"><strong data-i18n="activity4Title">Project gallery refreshed</strong><div data-i18n="activity4Text">Three new project images were added.</div><span class="activity-time" data-i18n="twoDays">2 days ago</span></div></div>
+          </div>
+        </article></div>
+      </section>
+
+      <section class="row g-3 mt-1" id="projects">
+        <div class="col-12"><article class="panel table-panel"><div class="panel-head"><div><h3 class="panel-title" data-i18n="projectsOverview">Projects overview</h3><p class="panel-subtitle" data-i18n="projectsOverviewSub">A quick view of active installations</p></div><button class="btn-soft" id="manageProjects"><span data-i18n="manageProjects">Manage projects</span> <i class="bi bi-arrow-up-right ms-1"></i></button></div>
+          <div class="table-responsive"><table class="table" id="projectsTable"><thead><tr><th data-i18n="project">Project</th><th data-i18n="type">Type</th><th data-i18n="location">Location</th><th data-i18n="progress">Progress</th><th data-i18n="status">Status</th></tr></thead><tbody>
+            <tr><td><strong data-i18n="projectOne">Cairo Solar Farm</strong></td><td data-i18n="utilityScale">Utility-scale solar</td><td>Cairo, Egypt</td><td><div class="d-flex align-items-center gap-2"><div class="progress flex-grow-1" style="max-width:100px"><div class="progress-bar" style="width:78%"></div></div><span>78%</span></div></td><td><span class="status status-progress" data-i18n="inProgress">In progress</span></td></tr>
+            <tr><td><strong data-i18n="projectTwo">New Capital Offices</strong></td><td data-i18n="commercial">Commercial installation</td><td>New Capital, Egypt</td><td><div class="d-flex align-items-center gap-2"><div class="progress flex-grow-1" style="max-width:100px"><div class="progress-bar" style="width:54%"></div></div><span>54%</span></div></td><td><span class="status status-progress" data-i18n="inProgress">In progress</span></td></tr>
+            <tr><td><strong data-i18n="projectThree">Alexandria Residence</strong></td><td data-i18n="residential">Residential solar</td><td>Alexandria, Egypt</td><td><div class="d-flex align-items-center gap-2"><div class="progress flex-grow-1" style="max-width:100px"><div class="progress-bar" style="width:32%"></div></div><span>32%</span></div></td><td><span class="status status-new" data-i18n="planning">Planning</span></td></tr>
+          </tbody></table></div>
+        </article></div>
+      </section>
+
+      <div class="footer-note">© <span id="year"></span> IVSS · <span data-i18n="footer">Infinity Vogt Solar Services · Admin workspace</span></div>
+    </div>
+  </main>
+</div>
+
+<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:18px;">
+    <form id="projectForm"><div class="modal-header" style="border-color:var(--border)"><h5 class="modal-title fw-bold" id="projectModalTitle" data-i18n="addNewProject">Add a new project</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body"><div class="mb-3"><label for="projectName" class="form-label small fw-bold" data-i18n="projectName">Project name</label><input id="projectName" class="form-control" required maxlength="100" placeholder="e.g. Giza Solar Installation"></div><div class="mb-3"><label for="projectLocation" class="form-label small fw-bold" data-i18n="location">Location</label><input id="projectLocation" class="form-control" required maxlength="100" placeholder="e.g. Giza, Egypt"></div><div><label for="projectType" class="form-label small fw-bold" data-i18n="type">Type</label><select id="projectType" class="form-select"><option data-i18n="residential">Residential solar</option><option data-i18n="commercial">Commercial installation</option><option data-i18n="utilityScale">Utility-scale solar</option></select></div></div>
+      <div class="modal-footer" style="border-color:var(--border)"><button type="button" class="btn-soft" data-bs-dismiss="modal" data-i18n="cancel">Cancel</button><button type="submit" class="btn-ivss" data-i18n="saveProject">Save project</button></div>
+    </form>
+  </div></div>
+</div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="appToast" class="toast align-items-center border-0" role="status" aria-live="polite" aria-atomic="true"><div class="d-flex"><div class="toast-body" id="toastMessage">Done</div><button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Explore solar panels, inverters, battery storage and solar energy equipment from IVSS.">
+  <title>Solar Products | IVSS — Powering with Nature</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Navbar: same structure as the IVSS homepage -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html" aria-label="IVSS home">
+        <span class="brand-mark"><img src="./logo.png" alt=""></span>
+        <span>IVSS<span class="d-block fw-normal small"
+            style="font-size:.65rem;color:var(--ivss-muted);letter-spacing:0" data-i18n="brandSub">Infinity Vogt Solar
+            Services</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2" style="color:var(--ivss-ink)"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html" data-i18n="navAbout">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./services.html" data-i18n="navServices">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./projects.html" data-i18n="navProjects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./products.html" data-i18n="navProducts">Products</a>
+          </li>
+
+          <li class="nav-item d-flex gap-2 mt-3 mt-lg-0">
+            <button id="langToggle" class="icon-btn" type="button" aria-label="Switch language" title="Switch language">
+              <span class="fw-bold small">ع</span>
+            </button>
+            <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode"
+              title="Toggle dark mode">
+              <i class="bi bi-moon-stars"></i>
+            </button>
+          </li>
+
+          <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
+            <a class="btn btn-ivss" href="#contact" data-i18n="navContact">
+              Contact us <i class="bi bi-arrow-up-right ms-1"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Products Hero -->
+    <section class="hero products-hero" id="home">
+      <div class="container position-relative">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="reveal">
+              <span class="eyebrow">
+                <span class="dot"></span>
+                <span data-i18n="productsEyebrow">Solar products. Smarter energy.</span>
+              </span>
+
+              <h1 data-i18n-html="productsTitle">
+                The right equipment for a
+                <span class="text-gradient">brighter future.</span>
+              </h1>
+
+              <p class="hero-copy" data-i18n="productsCopy">
+                Explore solar panels, inverters, battery storage, and integrated
+                energy solutions for residential, commercial, and industrial projects.
+              </p>
+
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="#products" class="btn btn-ivss" data-i18n="productsCta">
+                  Explore products <i class="bi bi-arrow-up-right ms-1"></i>
+                </a>
+                <a href="./details.html" class="btn btn-outline-ivss" data-i18n="productsSecondary">
+                  Request a quote
+                </a>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 mt-4 pt-2">
+                <span class="brand-mark" style="width:38px;height:38px;border-radius:50%;font-size:.9rem">
+                  <i class="bi bi-lightning-charge"></i>
+                </span>
+                <div>
+                  <strong class="d-block small" data-i18n="productsTrust">
+                    Solutions matched to your project
+                  </strong>
+                  <span class="small" style="color:var(--ivss-muted)" data-i18n="productsTrustSub">
+                    Discuss product options with our team
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal delay-2">
+            <div class="products-hero-visual">
+              <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1100&q=85"
+                alt="Solar photovoltaic panels in sunlight">
+              <div class="products-hero-caption">
+                <span class="small d-block mb-2" data-i18n="productsVisualLabel">
+                  Our product range
+                </span>
+                <strong class="fs-4" data-i18n="productsVisualTitle">
+                  Reliable components. Smarter solutions.
+                </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section pt-0" id="categories">
+      <div class="container">
+        <div class="text-center mx-auto mb-5 reveal" style="max-width:700px">
+          <span class="section-kicker" data-i18n="categoryKicker">Explore our range</span>
+          <h2 class="section-title" data-i18n-html="categoryTitle">
+            Solar products for <span class="text-gradient">every project.</span>
+          </h2>
+          <p class="section-copy mx-auto" data-i18n="categoryCopy">
+            Browse product categories and find the equipment that suits your energy requirements.
+          </p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-12 col-sm-6 col-xl-3 reveal">
+            <button class="product-category-card active" type="button" data-category="all" aria-pressed="true">
+              <span class="service-icon"><i class="bi bi-grid"></i></span>
+              <span>
+                <h3 data-i18n="catAll">All products</h3>
+                <p data-i18n="catAllCopy">Explore our range</p>
+              </span>
+            </button>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3 reveal delay-1">
+            <button class="product-category-card" type="button" data-category="panels" aria-pressed="false">
+              <span class="service-icon"><i class="bi bi-sun"></i></span>
+              <span>
+                <h3 data-i18n="catPanels">Solar panels</h3>
+                <p data-i18n="catPanelsCopy">Photovoltaic modules</p>
+              </span>
+            </button>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3 reveal delay-2">
+            <button class="product-category-card" type="button" data-category="inverters" aria-pressed="false">
+              <span class="service-icon"><i class="bi bi-lightning-charge"></i></span>
+              <span>
+                <h3 data-i18n="catInverters">Inverters</h3>
+                <p data-i18n="catInvertersCopy">Power conversion</p>
+              </span>
+            </button>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3 reveal delay-3">
+            <button class="product-category-card" type="button" data-category="batteries" aria-pressed="false">
+              <span class="service-icon"><i class="bi bi-battery-charging"></i></span>
+              <span>
+                <h3 data-i18n="catBatteries">Batteries</h3>
+                <p data-i18n="catBatteriesCopy">Energy storage</p>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Listing -->
+    <section class="section pt-0" id="products">
+      <div class="container">
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4 reveal">
+          <div>
+            <span class="section-kicker" data-i18n="catalogKicker">Product catalogue</span>
+            <h2 class="section-title mb-0" data-i18n-html="catalogTitle">
+              Explore our <span class="text-gradient">solar equipment.</span>
+            </h2>
+          </div>
+          <p class="section-copy mb-0" style="max-width:420px" data-i18n="catalogCopy">
+            Contact our team for confirmed specifications, availability, and quotations.
+          </p>
+        </div>
+
+        <div class="products-toolbar reveal">
+          <div class="products-search">
+            <i class="bi bi-search"></i>
+            <input type="search" id="productSearch" class="form-control contact-field" placeholder="Search products..."
+              aria-label="Search products" data-i18n-placeholder="searchPlaceholder">
+          </div>
+
+          <select id="categoryFilter" class="form-select contact-field products-filter"
+            aria-label="Filter products by category">
+            <option value="all" data-i18n="filterAll">All categories</option>
+            <option value="panels" data-i18n="filterPanels">Solar panels</option>
+            <option value="inverters" data-i18n="filterInverters">Inverters</option>
+            <option value="batteries" data-i18n="filterBatteries">Batteries</option>
+            <option value="systems" data-i18n="filterSystems">Solar systems</option>
+          </select>
+
+          <span class="small" style="color:var(--ivss-muted)" id="productCount" aria-live="polite">6 products</span>
+        </div>
+
+        <div class="row g-4" id="productGrid">
+
+          <div class="col-md-6 col-xl-4 product-item reveal" data-category="panels"
+            data-name="monocrystalline solar panel">
+            <article class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=850&q=80"
+                  alt="Solar photovoltaic panels" loading="lazy">
+                <span class="product-badge" data-i18n="badgePanels">Solar panels</span>
+              </div>
+              <div class="product-card-body">
+                <span class="product-type" data-i18n="typePV">Photovoltaic modules</span>
+                <h3 data-i18n="product1Title">Monocrystalline Solar Panels</h3>
+                <p data-i18n="product1Copy">
+                  Solar modules for residential, commercial, and utility-scale installations.
+                </p>
+                <div class="product-specs">
+                  <span><i class="bi bi-lightning"></i><span data-i18n="specPower">Power options</span></span>
+                  <span><i class="bi bi-sun"></i><span data-i18n="specEfficiency">High efficiency options</span></span>
+                </div>
+                <div class="product-card-actions">
+                  <a href="./details.html" class="btn btn-outline-ivss product-details"
+                    data-product="Monocrystalline Solar Panels" data-i18n="viewDetails">
+                    View details
+                  </a>
+                  <a href="#contact" class="btn btn-ivss quote-product" data-product="Monocrystalline Solar Panels"
+                    data-i18n="requestQuote">
+                    Request a quote
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4 product-item reveal delay-1" data-category="panels"
+            data-name="bifacial solar panels">
+            <article class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=850&q=80"
+                  alt="Solar installation in an open landscape" loading="lazy">
+                <span class="product-badge" data-i18n="badgeAdvanced">Advanced technology</span>
+              </div>
+              <div class="product-card-body">
+                <span class="product-type" data-i18n="typePV">Photovoltaic modules</span>
+                <h3 data-i18n="product2Title">Bifacial Solar Panels</h3>
+                <p data-i18n="product2Copy">
+                  Dual-sided solar module options for suitable site and mounting conditions.
+                </p>
+                <div class="product-specs">
+                  <span><i class="bi bi-layers"></i><span data-i18n="specDual">Dual-sided design</span></span>
+                  <span><i class="bi bi-sun"></i><span data-i18n="specSite">Site dependent</span></span>
+                </div>
+                <div class="product-card-actions">
+                  <a href="./details.html" class="btn btn-outline-ivss product-details" data-product="Bifacial Solar Panels"
+                    data-i18n="viewDetails">View details</a>
+                  <a href="#contact" class="btn btn-ivss quote-product" data-product="Bifacial Solar Panels"
+                    data-i18n="requestQuote">Request a quote</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4 product-item reveal delay-2" data-category="inverters"
+            data-name="hybrid solar inverter">
+            <article class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=850&q=80"
+                  alt="Electrical power infrastructure" loading="lazy">
+                <span class="product-badge" data-i18n="badgeHybrid">Hybrid solutions</span>
+              </div>
+              <div class="product-card-body">
+                <span class="product-type" data-i18n="typeInverter">Power conversion</span>
+                <h3 data-i18n="product3Title">Hybrid Solar Inverters</h3>
+                <p data-i18n="product3Copy">
+                  Inverter options for solar installations designed to integrate with battery storage.
+                </p>
+                <div class="product-specs">
+                  <span><i class="bi bi-arrow-left-right"></i><span data-i18n="specHybrid">Hybrid
+                      operation</span></span>
+                  <span><i class="bi bi-plug"></i><span data-i18n="specGrid">Grid options</span></span>
+                </div>
+                <div class="product-card-actions">
+                  <a href="./details.html" class="btn btn-outline-ivss product-details" data-product="Hybrid Solar Inverters"
+                    data-i18n="viewDetails">View details</a>
+                  <a href="#contact" class="btn btn-ivss quote-product" data-product="Hybrid Solar Inverters"
+                    data-i18n="requestQuote">Request a quote</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4 product-item reveal" data-category="inverters"
+            data-name="on grid solar inverter">
+            <article class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=850&q=80"
+                  alt="Renewable energy equipment" loading="lazy">
+                <span class="product-badge" data-i18n="badgeGrid">Grid connected</span>
+              </div>
+              <div class="product-card-body">
+                <span class="product-type" data-i18n="typeInverter">Power conversion</span>
+                <h3 data-i18n="product4Title">On-Grid Inverters</h3>
+                <p data-i18n="product4Copy">
+                  Grid-connected inverter options for appropriately designed PV systems.
+                </p>
+                <div class="product-specs">
+                  <span><i class="bi bi-lightning"></i><span data-i18n="specPower">Power options</span></span>
+                  <span><i class="bi bi-activity"></i><span data-i18n="specMonitoring">Monitoring options</span></span>
+                </div>
+                <div class="product-card-actions">
+                  <a href="./details.html" class="btn btn-outline-ivss product-details" data-product="On-Grid Inverters"
+                    data-i18n="viewDetails">View details</a>
+                  <a href="#contact" class="btn btn-ivss quote-product" data-product="On-Grid Inverters"
+                    data-i18n="requestQuote">Request a quote</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4 product-item reveal delay-1" data-category="batteries"
+            data-name="lithium battery energy storage">
+            <article class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=850&q=80"
+                  alt="Electrical energy storage equipment" loading="lazy">
+                <span class="product-badge" data-i18n="badgeStorage">Energy storage</span>
+              </div>
+              <div class="product-card-body">
+                <span class="product-type" data-i18n="typeBattery">Battery systems</span>
+                <h3 data-i18n="product5Title">Lithium Battery Systems</h3>
+                <p data-i18n="product5Copy">
+                  Storage options for backup power and solar energy management.
+                </p>
+                <div class="product-specs">
+                  <span><i class="bi bi-battery-full"></i><span data-i18n="specCapacity">Capacity options</span></span>
+                  <span><i class="bi bi-shield-check"></i><span data-i18n="specBMS">BMS options</span></span>
+                </div>
+                <div class="product-card-actions">
+                  <a href="./details.html" class="btn btn-outline-ivss product-details" data-product="Lithium Battery Systems"
+                    data-i18n="viewDetails">View details</a>
+                  <a href="#contact" class="btn btn-ivss quote-product" data-product="Lithium Battery Systems"
+                    data-i18n="requestQuote">Request a quote</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4 product-item reveal delay-2" data-category="systems"
+            data-name="complete solar energy system">
+            <article class="product-card">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=850&q=80"
+                  alt="Complete solar panel installation" loading="lazy">
+                <span class="product-badge" data-i18n="badgeComplete">Complete solution</span>
+              </div>
+              <div class="product-card-body">
+                <span class="product-type" data-i18n="typeSystem">Integrated solutions</span>
+                <h3 data-i18n="product6Title">Complete Solar Systems</h3>
+                <p data-i18n="product6Copy">
+                  Project-specific combinations of PV panels, inverters, and storage equipment.
+                </p>
+                <div class="product-specs">
+                  <span><i class="bi bi-house"></i><span data-i18n="specApplications">Multiple
+                      applications</span></span>
+                  <span><i class="bi bi-gear"></i><span data-i18n="specCustom">Custom design</span></span>
+                </div>
+                <div class="product-card-actions">
+                  <a href="./details.html" class="btn btn-outline-ivss product-details" data-product="Complete Solar Systems"
+                    data-i18n="viewDetails">View details</a>
+                  <a href="#contact" class="btn btn-ivss quote-product" data-product="Complete Solar Systems"
+                    data-i18n="requestQuote">Request a quote</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <div class="product-empty" id="productEmpty">
+          <i class="bi bi-search"></i>
+          <h3 class="h5 fw-bold" data-i18n="emptyTitle">No products found</h3>
+          <p data-i18n="emptyCopy">Try a different search or category.</p>
+          <button class="btn btn-outline-ivss mt-2" id="resetFilters" type="button" data-i18n="resetFilters">Reset
+            filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose IVSS -->
+    <section class="section pt-0">
+      <div class="container">
+        <div class="text-center mx-auto mb-5 reveal" style="max-width:700px">
+          <span class="section-kicker" data-i18n="benefitsKicker">Why IVSS</span>
+          <h2 class="section-title" data-i18n-html="benefitsTitle">
+            The right products, <span class="text-gradient">the right guidance.</span>
+          </h2>
+          <p class="section-copy mx-auto" data-i18n="benefitsCopy">
+            We help you identify equipment options that align with your system requirements.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4 reveal">
+            <article class="product-benefit">
+              <div class="service-icon"><i class="bi bi-clipboard2-check"></i></div>
+              <h3 data-i18n="benefit1Title">Project-based recommendations</h3>
+              <p data-i18n="benefit1Copy">
+                Evaluate product options based on the application, system design, and site conditions.
+              </p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal delay-1">
+            <article class="product-benefit">
+              <div class="service-icon"><i class="bi bi-gear-wide-connected"></i></div>
+              <h3 data-i18n="benefit2Title">Integrated solutions</h3>
+              <p data-i18n="benefit2Copy">
+                Consider how panels, inverters, and battery storage work together as a system.
+              </p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal delay-2">
+            <article class="product-benefit">
+              <div class="service-icon"><i class="bi bi-headset"></i></div>
+              <h3 data-i18n="benefit3Title">Technical support</h3>
+              <p data-i18n="benefit3Copy">
+                Discuss your requirements with the IVSS team before selecting equipment.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote CTA -->
+    <section class="section pt-0">
+      <div class="container">
+        <div class="cta product-quote reveal">
+          <div class="row align-items-center g-4 position-relative" style="z-index:1">
+            <div class="col-lg-8">
+              <span class="section-kicker" style="color:var(--ivss-lime)" data-i18n="quoteKicker">Let's discuss your
+                requirements</span>
+              <h2 class="section-title text-white" data-i18n="quoteTitle">
+                Looking for a solar product solution?
+              </h2>
+              <p class="section-copy mb-0" data-i18n="quoteCopy">
+                Tell us about your project and request a quotation tailored to your needs.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="#contact" class="btn btn-light rounded-pill fw-bold px-4 py-3" style="color:var(--ivss-green)"
+                data-i18n="quoteButton">
+                Request a quote <i class="bi bi-arrow-up-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Product Inquiry -->
+    <section class="section pt-0" id="contact">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5 reveal">
+            <span class="section-kicker" data-i18n="contactKicker">Get in touch</span>
+            <h2 class="section-title" data-i18n-html="contactTitle">
+              Let's discuss <span class="text-gradient">your requirements.</span>
+            </h2>
+            <p class="section-copy" data-i18n="contactCopy">
+              Tell us which products you're interested in and share a few details about your project.
+            </p>
+
+            <div class="d-flex gap-3 align-items-center mt-4">
+              <div class="service-icon mb-0"><i class="bi bi-box-seam"></i></div>
+              <div>
+                <strong class="d-block" data-i18n="contactProductTitle">Product inquiries</strong>
+                <span style="color:var(--ivss-muted)" data-i18n="contactProductCopy">
+                  Specifications, availability, and quotations
+                </span>
+              </div>
+            </div>
+
+            <div class="d-flex gap-3 align-items-center mt-3">
+              <div class="service-icon mb-0"><i class="bi bi-geo-alt"></i></div>
+              <div>
+                <strong class="d-block" data-i18n="contactLocationTitle">Location</strong>
+                <span style="color:var(--ivss-muted)" data-i18n="contactLocationCopy">
+                  Egypt · Contact IVSS for project details
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 reveal delay-1">
+            <form id="productInquiryForm" class="soft-panel">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold" for="inquiryName" data-i18n="formName">
+                    Full name
+                  </label>
+                  <input class="form-control contact-field" id="inquiryName" name="name" required autocomplete="name"
+                    placeholder="Your name" data-i18n-placeholder="formNamePlaceholder">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold" for="inquiryEmail" data-i18n="formEmail">
+                    Work email
+                  </label>
+                  <input class="form-control contact-field" id="inquiryEmail" name="email" type="email" required
+                    autocomplete="email" placeholder="you@company.com" data-i18n-placeholder="formEmailPlaceholder">
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="inquiryProduct" data-i18n="formProduct">Product of
+                    interest</label>
+                  <select class="form-select contact-field" id="inquiryProduct" name="product" required>
+                    <option value="" data-i18n="formChooseProduct">Choose a product</option>
+                    <option value="Monocrystalline Solar Panels" data-i18n="product1Title">Monocrystalline Solar Panels
+                    </option>
+                    <option value="Bifacial Solar Panels" data-i18n="product2Title">Bifacial Solar Panels</option>
+                    <option value="Hybrid Solar Inverters" data-i18n="product3Title">Hybrid Solar Inverters</option>
+                    <option value="On-Grid Inverters" data-i18n="product4Title">On-Grid Inverters</option>
+                    <option value="Lithium Battery Systems" data-i18n="product5Title">Lithium Battery Systems</option>
+                    <option value="Complete Solar Systems" data-i18n="product6Title">Complete Solar Systems</option>
+                    <option value="Other" data-i18n="formOther">Other</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="inquiryMessage" data-i18n="formMessage">Project
+                    details</label>
+                  <textarea class="form-control contact-field" id="inquiryMessage" name="message" rows="4" required
+                    placeholder="Tell us about your project..."
+                    data-i18n-placeholder="formMessagePlaceholder"></textarea>
+                </div>
+
+                <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+                  <button class="btn btn-ivss" type="submit" data-i18n="formSubmit">
+                    Prepare inquiry <i class="bi bi-arrow-up-right ms-1"></i>
+                  </button>
+                  <span class="small" style="color:var(--ivss-muted)" data-i18n="formNote">
+                    Demo form — connect your backend before launch.
+                  </span>
+                </div>
+
+                <div class="col-12">
+                  <div id="formFeedback" class="small fw-semibold" role="status" aria-live="polite"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <a class="navbar-brand" href="./index.html">
+        <span class="brand-mark" style="width:34px;height:34px;border-radius:11px;font-size:.9rem">
+          <img src="./logo.png" alt="">
+        </span>
+        <span>IVSS</span>
+      </a>
+      <span data-i18n="footerTag">Powering with Nature</span>
+      <span>© <span id="year"></span> IVSS.
+        <span data-i18n="footerRights">All rights reserved.</span>
+      </span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+
+  <script>
+    /*
+     * Products page behaviour.
+     * Theme, language, reveal effects, and scroll progress remain delegated
+     * to the existing ./script.js file.
+     */
+
+    const productTranslations = {
+      en: {
+        brandSub: "Infinity Vogt Solar Services",
+        navAbout: "About",
+        navServices: "Services",
+        navProjects: "Projects",
+        navProducts: "Products",
+        navSafety: "Safety",
+        navContact: 'Contact us <i class="bi bi-arrow-up-right ms-1"></i>',
+        productsEyebrow: "Solar products. Smarter energy.",
+        productsTitle: 'The right equipment for a <span class="text-gradient">brighter future.</span>',
+        productsCopy: "Explore solar panels, inverters, battery storage, and integrated energy solutions for residential, commercial, and industrial projects.",
+        productsCta: 'Explore products <i class="bi bi-arrow-up-right ms-1"></i>',
+        productsSecondary: "Request a quote",
+        productsTrust: "Solutions matched to your project",
+        productsTrustSub: "Discuss product options with our team",
+        productsVisualLabel: "Our product range",
+        productsVisualTitle: "Reliable components. Smarter solutions.",
+        categoryKicker: "Explore our range",
+        categoryTitle: 'Solar products for <span class="text-gradient">every project.</span>',
+        categoryCopy: "Browse product categories and find the equipment that suits your energy requirements.",
+        catAll: "All products",
+        catAllCopy: "Explore our range",
+        catPanels: "Solar panels",
+        catPanelsCopy: "Photovoltaic modules",
+        catInverters: "Inverters",
+        catInvertersCopy: "Power conversion",
+        catBatteries: "Batteries",
+        catBatteriesCopy: "Energy storage",
+        catalogKicker: "Product catalogue",
+        catalogTitle: 'Explore our <span class="text-gradient">solar equipment.</span>',
+        catalogCopy: "Contact our team for confirmed specifications, availability, and quotations.",
+        searchPlaceholder: "Search products...",
+        filterAll: "All categories",
+        filterPanels: "Solar panels",
+        filterInverters: "Inverters",
+        filterBatteries: "Batteries",
+        filterSystems: "Solar systems",
+        badgePanels: "Solar panels",
+        badgeAdvanced: "Advanced technology",
+        badgeHybrid: "Hybrid solutions",
+        badgeGrid: "Grid connected",
+        badgeStorage: "Energy storage",
+        badgeComplete: "Complete solution",
+        typePV: "Photovoltaic modules",
+        typeInverter: "Power conversion",
+        typeBattery: "Battery systems",
+        typeSystem: "Integrated solutions",
+        product1Title: "Monocrystalline Solar Panels",
+        product1Copy: "Solar modules for residential, commercial, and utility-scale installations.",
+        product2Title: "Bifacial Solar Panels",
+        product2Copy: "Dual-sided solar module options for suitable site and mounting conditions.",
+        product3Title: "Hybrid Solar Inverters",
+        product3Copy: "Inverter options for solar installations designed to integrate with battery storage.",
+        product4Title: "On-Grid Inverters",
+        product4Copy: "Grid-connected inverter options for appropriately designed PV systems.",
+        product5Title: "Lithium Battery Systems",
+        product5Copy: "Storage options for backup power and solar energy management.",
+        product6Title: "Complete Solar Systems",
+        product6Copy: "Project-specific combinations of PV panels, inverters, and storage equipment.",
+        specPower: "Power options",
+        specEfficiency: "High efficiency options",
+        specDual: "Dual-sided design",
+        specSite: "Site dependent",
+        specHybrid: "Hybrid operation",
+        specGrid: "Grid options",
+        specMonitoring: "Monitoring options",
+        specCapacity: "Capacity options",
+        specBMS: "BMS options",
+        specApplications: "Multiple applications",
+        specCustom: "Custom design",
+        viewDetails: "View details",
+        requestQuote: "Request a quote",
+        emptyTitle: "No products found",
+        emptyCopy: "Try a different search or category.",
+        resetFilters: "Reset filters",
+        benefitsKicker: "Why IVSS",
+        benefitsTitle: 'The right products, <span class="text-gradient">the right guidance.</span>',
+        benefitsCopy: "We help you identify equipment options that align with your system requirements.",
+        benefit1Title: "Project-based recommendations",
+        benefit1Copy: "Evaluate product options based on the application, system design, and site conditions.",
+        benefit2Title: "Integrated solutions",
+        benefit2Copy: "Consider how panels, inverters, and battery storage work together as a system.",
+        benefit3Title: "Technical support",
+        benefit3Copy: "Discuss your requirements with the IVSS team before selecting equipment.",
+        quoteKicker: "Let's discuss your requirements",
+        quoteTitle: "Looking for a solar product solution?",
+        quoteCopy: "Tell us about your project and request a quotation tailored to your needs.",
+        quoteButton: 'Request a quote <i class="bi bi-arrow-up-right ms-1"></i>',
+        contactKicker: "Get in touch",
+        contactTitle: 'Let\'s discuss <span class="text-gradient">your requirements.</span>',
+        contactCopy: "Tell us which products you're interested in and share a few details about your project.",
+        contactProductTitle: "Product inquiries",
+        contactProductCopy: "Specifications, availability, and quotations",
+        contactLocationTitle: "Location",
+        contactLocationCopy: "Egypt · Contact IVSS for project details",
+        formName: "Full name",
+        formEmail: "Work email",
+        formProduct: "Product of interest",
+        formChooseProduct: "Choose a product",
+        formOther: "Other",
+        formMessage: "Project details",
+        formNamePlaceholder: "Your name",
+        formEmailPlaceholder: "you@company.com",
+        formMessagePlaceholder: "Tell us about your project...",
+        formSubmit: 'Prepare inquiry <i class="bi bi-arrow-up-right ms-1"></i>',
+        formNote: "Demo form — connect your backend before launch.",
+        footerTag: "Powering with Nature",
+        footerRights: "All rights reserved.",
+        count: n => `${n} product${n === 1 ? "" : "s"}`,
+        emptyFeedback: "Please choose a product and complete all required fields.",
+        preparedFeedback: "Your inquiry is prepared. Connect this form to your email or Laravel backend to send it."
+      },
+      ar: {
+        brandSub: "إنفينيتي فوغت لخدمات الطاقة الشمسية",
+        navAbout: "من نحن",
+        navServices: "الخدمات",
+        navProjects: "المشروعات",
+        navProducts: "المنتجات",
+        navSafety: "السلامة",
+        navContact: 'تواصل معنا <i class="bi bi-arrow-up-left ms-1"></i>',
+        productsEyebrow: "منتجات الطاقة الشمسية. طاقة أكثر ذكاءً.",
+        productsTitle: 'المعدات المناسبة من أجل <span class="text-gradient">مستقبل أكثر إشراقًا.</span>',
+        productsCopy: "اكتشف الألواح الشمسية والعاكسات وبطاريات التخزين وحلول الطاقة المتكاملة للمشروعات السكنية والتجارية والصناعية.",
+        productsCta: 'استكشف المنتجات <i class="bi bi-arrow-up-left ms-1"></i>',
+        productsSecondary: "اطلب عرض سعر",
+        productsTrust: "حلول تناسب مشروعك",
+        productsTrustSub: "ناقش خيارات المنتجات مع فريقنا",
+        productsVisualLabel: "مجموعة منتجاتنا",
+        productsVisualTitle: "مكونات موثوقة. حلول أكثر ذكاءً.",
+        categoryKicker: "استكشف مجموعتنا",
+        categoryTitle: 'منتجات شمسية <span class="text-gradient">لكل مشروع.</span>',
+        categoryCopy: "تصفح فئات المنتجات واختر المعدات التي تناسب احتياجاتك من الطاقة.",
+        catAll: "كل المنتجات",
+        catAllCopy: "استكشف المجموعة",
+        catPanels: "الألواح الشمسية",
+        catPanelsCopy: "وحدات الخلايا الكهروضوئية",
+        catInverters: "العاكسات",
+        catInvertersCopy: "تحويل الطاقة",
+        catBatteries: "البطاريات",
+        catBatteriesCopy: "تخزين الطاقة",
+        catalogKicker: "كتالوج المنتجات",
+        catalogTitle: 'اكتشف <span class="text-gradient">معدات الطاقة الشمسية.</span>',
+        catalogCopy: "تواصل مع فريقنا لمعرفة المواصفات المعتمدة والتوافر والأسعار.",
+        searchPlaceholder: "ابحث عن المنتجات...",
+        filterAll: "كل الفئات",
+        filterPanels: "الألواح الشمسية",
+        filterInverters: "العاكسات",
+        filterBatteries: "البطاريات",
+        filterSystems: "الأنظمة الشمسية",
+        badgePanels: "ألواح شمسية",
+        badgeAdvanced: "تقنية متطورة",
+        badgeHybrid: "حلول هجينة",
+        badgeGrid: "متصلة بالشبكة",
+        badgeStorage: "تخزين الطاقة",
+        badgeComplete: "حل متكامل",
+        typePV: "وحدات كهروضوئية",
+        typeInverter: "تحويل الطاقة",
+        typeBattery: "أنظمة البطاريات",
+        typeSystem: "حلول متكاملة",
+        product1Title: "ألواح شمسية أحادية البلورة",
+        product1Copy: "ألواح شمسية للتركيبات السكنية والتجارية ومحطات الطاقة الكبيرة.",
+        product2Title: "ألواح شمسية ثنائية الوجه",
+        product2Copy: "ألواح تستقبل الضوء من الوجهين للمواقع والتركيبات المناسبة.",
+        product3Title: "عاكسات شمسية هجينة",
+        product3Copy: "عاكسات لأنظمة الطاقة الشمسية المصممة للعمل مع تخزين البطاريات.",
+        product4Title: "عاكسات متصلة بالشبكة",
+        product4Copy: "خيارات عاكسات متصلة بالشبكة لأنظمة شمسية مصممة بصورة مناسبة.",
+        product5Title: "أنظمة بطاريات الليثيوم",
+        product5Copy: "حلول تخزين لدعم الطاقة الاحتياطية وإدارة الطاقة الشمسية.",
+        product6Title: "أنظمة طاقة شمسية متكاملة",
+        product6Copy: "تجميعات تناسب المشروع من الألواح والعاكسات ومعدات التخزين.",
+        specPower: "خيارات قدرة مختلفة",
+        specEfficiency: "خيارات كفاءة عالية",
+        specDual: "تصميم ثنائي الوجه",
+        specSite: "حسب الموقع",
+        specHybrid: "تشغيل هجين",
+        specGrid: "خيارات اتصال بالشبكة",
+        specMonitoring: "خيارات مراقبة",
+        specCapacity: "خيارات سعة مختلفة",
+        specBMS: "خيارات إدارة البطارية",
+        specApplications: "تطبيقات متعددة",
+        specCustom: "تصميم مخصص",
+        viewDetails: "عرض التفاصيل",
+        requestQuote: "اطلب عرض سعر",
+        emptyTitle: "لم يتم العثور على منتجات",
+        emptyCopy: "جرّب كلمة بحث أو فئة أخرى.",
+        resetFilters: "إعادة ضبط التصفية",
+        benefitsKicker: "لماذا IVSS؟",
+        benefitsTitle: 'المنتجات المناسبة، <span class="text-gradient">والإرشاد المناسب.</span>',
+        benefitsCopy: "نساعدك في استكشاف المعدات التي تتوافق مع متطلبات نظامك.",
+        benefit1Title: "توصيات تناسب المشروع",
+        benefit1Copy: "قيّم خيارات المنتجات وفقًا للاستخدام وتصميم النظام وظروف الموقع.",
+        benefit2Title: "حلول متكاملة",
+        benefit2Copy: "تعرّف على كيفية عمل الألواح والعاكسات وبطاريات التخزين معًا.",
+        benefit3Title: "دعم فني",
+        benefit3Copy: "ناقش متطلباتك مع فريق IVSS قبل اختيار المعدات.",
+        quoteKicker: "دعنا نناقش احتياجاتك",
+        quoteTitle: "هل تبحث عن حل للطاقة الشمسية؟",
+        quoteCopy: "أخبرنا عن مشروعك واطلب عرض سعر يناسب احتياجاتك.",
+        quoteButton: 'اطلب عرض سعر <i class="bi bi-arrow-up-left ms-1"></i>',
+        contactKicker: "تواصل معنا",
+        contactTitle: 'دعنا نناقش <span class="text-gradient">متطلباتك.</span>',
+        contactCopy: "أخبرنا بالمنتجات التي تهمك وشاركنا بعض التفاصيل عن مشروعك.",
+        contactProductTitle: "استفسارات المنتجات",
+        contactProductCopy: "المواصفات والتوافر وعروض الأسعار",
+        contactLocationTitle: "الموقع",
+        contactLocationCopy: "مصر · تواصل مع IVSS لمعرفة تفاصيل المشروعات",
+        formName: "الاسم بالكامل",
+        formEmail: "البريد الإلكتروني للعمل",
+        formProduct: "المنتج المطلوب",
+        formChooseProduct: "اختر منتجًا",
+        formOther: "أخرى",
+        formMessage: "تفاصيل المشروع",
+        formNamePlaceholder: "اسمك",
+        formEmailPlaceholder: "you@company.com",
+        formMessagePlaceholder: "أخبرنا عن مشروعك...",
+        formSubmit: 'تجهيز الاستفسار <i class="bi bi-arrow-up-left ms-1"></i>',
+        formNote: "نموذج تجريبي — اربطه بالـ Backend قبل النشر.",
+        footerTag: "نحوّل الطبيعة إلى طاقة",
+        footerRights: "جميع الحقوق محفوظة.",
+        count: n => `${n} منتج`,
+        emptyFeedback: "يرجى اختيار منتج واستكمال الحقول المطلوبة.",
+        preparedFeedback: "تم تجهيز الاستفسار. اربط النموذج بالبريد الإلكتروني أو Laravel لإرسال الطلب."
+      }
+    };
+
+    const productsHtml = document.documentElement;
+    const searchInput = document.getElementById("productSearch");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const productItems = [...document.querySelectorAll(".product-item")];
+    const categoryCards = [...document.querySelectorAll(".product-category-card")];
+    const productCount = document.getElementById("productCount");
+    const productEmpty = document.getElementById("productEmpty");
+    const productGrid = document.getElementById("productGrid");
+    const inquiryProduct = document.getElementById("inquiryProduct");
+    const inquiryForm = document.getElementById("productInquiryForm");
+    const formFeedback = document.getElementById("formFeedback");
+
+    let currentLanguage = "en";
+
+    function filterProducts() {
+      const term = searchInput.value.trim().toLowerCase();
+      const category = categoryFilter.value;
+      let visible = 0;
+
+      productItems.forEach(item => {
+        const matchesCategory = category === "all" || item.dataset.category === category;
+        const searchableText = `${item.dataset.name} ${item.textContent}`.toLowerCase();
+        const matchesSearch = searchableText.includes(term);
+        const show = matchesCategory && matchesSearch;
+
+        item.classList.toggle("d-none", !show);
+        if (show) visible++;
+      });
+
+      productCount.textContent = productTranslations[currentLanguage].count(visible);
+      productEmpty.style.display = visible ? "none" : "block";
+      productGrid.style.display = visible ? "" : "none";
+    }
+
+    function setCategory(category) {
+      categoryFilter.value = category;
+
+      categoryCards.forEach(card => {
+        const active = card.dataset.category === category;
+        card.classList.toggle("active", active);
+        card.setAttribute("aria-pressed", String(active));
+      });
+
+      filterProducts();
+    }
+
+    categoryCards.forEach(card => {
+      card.addEventListener("click", () => {
+        setCategory(card.dataset.category);
+        document.getElementById("products").scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      });
+    });
+
+    searchInput.addEventListener("input", filterProducts);
+    categoryFilter.addEventListener("change", () => setCategory(categoryFilter.value));
+
+    document.getElementById("resetFilters").addEventListener("click", () => {
+      searchInput.value = "";
+      setCategory("all");
+    });
+
+    // Product actions select the product in the inquiry form.
+    document.querySelectorAll(".quote-product, .product-details").forEach(link => {
+      link.addEventListener("click", () => {
+        inquiryProduct.value = link.dataset.product;
+      });
+    });
+
+    // Language switching for this page.
+    function setProductsLanguage(language) {
+      currentLanguage = language;
+      const translations = productTranslations[language];
+
+      productsHtml.lang = language;
+      productsHtml.dir = language === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.dataset.i18n;
+        if (translations[key] !== undefined && typeof translations[key] === "string") {
+          element.innerHTML = translations[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+        const key = element.dataset.i18nPlaceholder;
+        if (translations[key]) element.placeholder = translations[key];
+      });
+
+      const langButton = document.getElementById("langToggle");
+      if (langButton) {
+        langButton.innerHTML = `<span class="fw-bold small">${language === "en" ? "ع" : "EN"}</span>`;
+        langButton.setAttribute("aria-label",
+          language === "en" ? "التبديل إلى العربية" : "Switch to English");
+      }
+
+      filterProducts();
+    }
+
+    document.getElementById("langToggle")?.addEventListener("click", () => {
+      setProductsLanguage(currentLanguage === "en" ? "ar" : "en");
+    });
+
+    // Demo submission only: no inquiry is sent to a server.
+    inquiryForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      if (!inquiryForm.reportValidity()) return;
+
+      formFeedback.textContent = productTranslations[currentLanguage].preparedFeedback;
+      formFeedback.style.color = "var(--ivss-green)";
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Optional product preselection via products.html?product=Hybrid%20Solar%20Inverters
+    const requestedProduct = new URLSearchParams(window.location.search).get("product");
+    if (requestedProduct) {
+      const matchingOption = [...inquiryProduct.options].find(
+        option => option.value.toLowerCase() === requestedProduct.toLowerCase()
+      );
+      if (matchingOption) inquiryProduct.value = matchingOption.value;
+    }
+
+    filterProducts();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Explore solar product details, technical specifications and request a quote from IVSS.">
+
+    <title>Solar Panel Details | IVSS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+
+</head>
+
+<body>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Navbar: same structure as the IVSS homepage -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html" aria-label="IVSS home">
+                <span class="brand-mark"><img src="./logo.png" alt=""></span>
+                <span>IVSS<span class="d-block fw-normal small"
+                        style="font-size:.65rem;color:var(--ivss-muted);letter-spacing:0" data-i18n="brandSub">Infinity
+                        Vogt Solar
+                        Services</span></span>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list fs-2" style="color:var(--ivss-ink)"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html" data-i18n="navAbout">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./services.html" data-i18n="navServices">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./projects.html" data-i18n="navProjects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./products.html" data-i18n="navProducts">Products</a>
+                    </li>
+
+                    <li class="nav-item d-flex gap-2 mt-3 mt-lg-0">
+                        <button id="langToggle" class="icon-btn" type="button" aria-label="Switch language"
+                            title="Switch language">
+                            <span class="fw-bold small">ع</span>
+                        </button>
+                        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode"
+                            title="Toggle dark mode">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                    </li>
+
+                    <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
+                        <a class="btn btn-ivss" href="#contact" data-i18n="navContact">
+                            Contact us <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Product Details Hero -->
+        <section class="product-page-hero">
+            <div class="container position-relative">
+
+                <div class="product-breadcrumb reveal">
+                    <a href="./index.html">Home</a>
+                    <i class="bi bi-chevron-right mx-2 small"></i>
+                    <a href="./products.html">Products</a>
+                    <i class="bi bi-chevron-right mx-2 small"></i>
+                    <span>Solar Panel</span>
+                </div>
+
+                <div class="row g-5 align-items-center">
+
+                    <!-- Product Image -->
+                    <div class="col-lg-6 reveal">
+                        <div class="product-main-image">
+
+                            <span class="product-image-badge">
+                                <i class="bi bi-sun-fill"></i>
+                                Solar Energy
+                            </span>
+
+                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1100&q=85"
+                                alt="Solar photovoltaic panels"
+                                onerror="this.onerror=null;this.src='./images/solar-panel.jpg';">
+
+                        </div>
+                    </div>
+
+                    <!-- Product Information -->
+                    <div class="col-lg-6 reveal delay-1">
+
+                        <span class="section-kicker">Solar Panels</span>
+
+                        <h1 class="product-page-title">
+                            High-Efficiency
+                            <span class="text-gradient">Solar Panel</span>
+                        </h1>
+
+                        <p class="product-reference">
+                            Product reference: IVSS-SP-001
+                        </p>
+
+                        <p class="product-summary">
+                            A photovoltaic solar panel designed to convert sunlight into
+                            electrical energy for solar power systems. Explore the product
+                            information and contact our team to discuss the right solution
+                            for your installation.
+                        </p>
+
+                        <div class="product-highlights">
+
+                            <div class="product-highlight">
+                                <i class="bi bi-lightning-charge"></i>
+                                <div>
+                                    <strong>Rated Power</strong>
+                                    <span>Confirm by model</span>
+                                </div>
+                            </div>
+
+                            <div class="product-highlight">
+                                <i class="bi bi-grid-1x2"></i>
+                                <div>
+                                    <strong>Technology</strong>
+                                    <span>Confirm by model</span>
+                                </div>
+                            </div>
+
+                            <div class="product-highlight">
+                                <i class="bi bi-shield-check"></i>
+                                <div>
+                                    <strong>Warranty</strong>
+                                    <span>See product terms</span>
+                                </div>
+                            </div>
+
+                            <div class="product-highlight">
+                                <i class="bi bi-box-seam"></i>
+                                <div>
+                                    <strong>Availability</strong>
+                                    <span>Contact IVSS</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="product-quote-box">
+                            <small class="d-block mb-1">Product pricing</small>
+                            <h3 class="fw-bold mb-2">Request a Quote</h3>
+                            <small>
+                                Final pricing depends on the selected model, quantity,
+                                availability, and project requirements.
+                            </small>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#contact" class="btn btn-ivss">
+                                Request a quote
+                                <i class="bi bi-arrow-up-right ms-1"></i>
+                            </a>
+
+                            <a href="#specifications" class="btn btn-outline-ivss">
+                                <i class="bi bi-list-check me-1"></i>
+                                Specifications
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Overview -->
+        <section class="product-detail-section pt-0">
+            <div class="container">
+
+                <div class="text-center mx-auto mb-5 reveal" style="max-width:700px">
+                    <span class="section-kicker">Product overview</span>
+                    <h2 class="section-title">
+                        Designed for <span class="text-gradient">Solar Applications.</span>
+                    </h2>
+                    <p class="section-copy mx-auto">
+                        Learn more about the product's role in a solar energy system
+                        and the key factors to consider before selecting a model.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6 col-xl-4 reveal">
+                        <article class="product-feature-card">
+                            <div class="service-icon">
+                                <i class="bi bi-sun"></i>
+                            </div>
+                            <h3>Solar Energy Conversion</h3>
+                            <p>
+                                Converts available sunlight into electricity for use
+                                in a correctly designed photovoltaic system.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-xl-4 reveal delay-1">
+                        <article class="product-feature-card">
+                            <div class="service-icon">
+                                <i class="bi bi-diagram-3"></i>
+                            </div>
+                            <h3>System Compatibility</h3>
+                            <p>
+                                Panel selection should account for inverter compatibility,
+                                system voltage, site conditions, and installation design.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-xl-4 reveal delay-2">
+                        <article class="product-feature-card">
+                            <div class="service-icon">
+                                <i class="bi bi-tools"></i>
+                            </div>
+                            <h3>Technical Support</h3>
+                            <p>
+                                Contact IVSS for assistance with product selection,
+                                technical information, and project requirements.
+                            </p>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specifications -->
+        <section class="product-detail-section" id="specifications"
+            style="background:var(--ivss-card);border-block:1px solid var(--ivss-line)">
+
+            <div class="container">
+                <div class="row g-5 align-items-start">
+
+                    <div class="col-lg-5 reveal">
+                        <span class="section-kicker">Technical information</span>
+
+                        <h2 class="section-title">
+                            Product <span class="text-gradient">Specifications.</span>
+                        </h2>
+
+                        <p class="section-copy">
+                            Review the technical information for the selected solar panel.
+                            Exact values should be added from the manufacturer's official
+                            datasheet before the page is published.
+                        </p>
+
+                        <div class="product-note mt-4">
+                            <i class="bi bi-info-circle"></i>
+                            <span>
+                                Specifications can vary between product models.
+                                Please confirm the final technical details with IVSS.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 reveal delay-1">
+                        <div class="product-specs-wrap">
+
+                            <table class="table product-specs align-middle">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Product type</th>
+                                        <td>Photovoltaic Solar Panel</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Model</th>
+                                        <td>To be confirmed</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Rated power</th>
+                                        <td>Refer to datasheet</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Cell technology</th>
+                                        <td>Refer to datasheet</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Module efficiency</th>
+                                        <td>Refer to datasheet</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Dimensions</th>
+                                        <td>Refer to datasheet</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Operating temperature</th>
+                                        <td>Refer to datasheet</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Warranty</th>
+                                        <td>Confirm warranty terms</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Availability</th>
+                                        <td>Contact IVSS</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote CTA -->
+        <section class="product-detail-section">
+            <div class="container">
+                <div class="cta reveal">
+
+                    <div class="row align-items-center g-4 position-relative" style="z-index:1">
+
+                        <div class="col-lg-8">
+                            <span class="section-kicker" style="color:var(--ivss-lime)">
+                                Have a project in mind?
+                            </span>
+
+                            <h2 class="section-title text-white">
+                                Let's find the right solar solution.
+                            </h2>
+
+                            <p class="section-copy mb-0">
+                                Share your requirements with our team to discuss product
+                                availability, technical specifications, and pricing.
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 text-lg-end">
+                            <a href="#contact" class="btn btn-light rounded-pill fw-bold px-4 py-3"
+                                style="color:#147d53">
+                                Contact our team
+                                <i class="bi bi-arrow-up-right ms-1"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="product-detail-section pt-0" id="contact">
+            <div class="container">
+
+                <div class="row g-5">
+
+                    <div class="col-lg-5 reveal">
+                        <span class="section-kicker">Get in touch</span>
+
+                        <h2 class="section-title">
+                            Request a <span class="text-gradient">Product Quote.</span>
+                        </h2>
+
+                        <p class="section-copy">
+                            Interested in this solar panel? Send us your contact details
+                            and project requirements.
+                        </p>
+
+                        <div class="d-flex gap-3 align-items-center mt-4">
+                            <div class="service-icon mb-0">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+
+                            <div>
+                                <strong class="d-block">Product</strong>
+                                <span style="color:var(--ivss-muted)">
+                                    High-Efficiency Solar Panel
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3 align-items-center mt-3">
+                            <div class="service-icon mb-0">
+                                <i class="bi bi-chat-dots"></i>
+                            </div>
+
+                            <div>
+                                <strong class="d-block">Product assistance</strong>
+                                <span style="color:var(--ivss-muted)">
+                                    Ask about models, specifications, and availability.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 reveal delay-1">
+                        <form id="productQuoteForm" class="soft-panel">
+
+                            <input type="hidden" name="product" value="High-Efficiency Solar Panel">
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold" for="quoteName">
+                                        Full name
+                                    </label>
+
+                                    <input class="form-control contact-field" id="quoteName" name="name"
+                                        autocomplete="name" placeholder="Your name" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold" for="quoteEmail">
+                                        Work email
+                                    </label>
+
+                                    <input class="form-control contact-field" id="quoteEmail" name="email" type="email"
+                                        autocomplete="email" placeholder="you@company.com" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold" for="quotePhone">
+                                        Phone number
+                                    </label>
+
+                                    <input class="form-control contact-field" id="quotePhone" name="phone" type="tel"
+                                        autocomplete="tel" placeholder="Your phone number">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold" for="quoteQuantity">
+                                        Estimated quantity
+                                    </label>
+
+                                    <input class="form-control contact-field" id="quoteQuantity" name="quantity"
+                                        type="number" min="1" placeholder="Quantity">
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold" for="quoteMessage">
+                                        Project requirements
+                                    </label>
+
+                                    <textarea class="form-control contact-field" id="quoteMessage" name="message"
+                                        rows="4" placeholder="Tell us about your project and requirements..."
+                                        required></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-ivss" type="submit">
+                                        Prepare inquiry
+                                        <i class="bi bi-arrow-up-right ms-1"></i>
+                                    </button>
+
+                                    <p class="small mt-3 mb-0" style="color:var(--ivss-muted)">
+                                        This form opens an email draft. Connect it to your
+                                        backend or CRM to receive inquiries automatically.
+                                    </p>
+
+                                    <div id="quoteFeedback" class="small mt-3" role="status" aria-live="polite"></div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer: same IVSS style -->
+    <footer>
+        <div class="container d-flex flex-column flex-md-row
+      justify-content-between align-items-center gap-3">
+
+            <a class="navbar-brand" href="./index.html">
+                <span class="brand-mark" style="width:34px;height:34px;border-radius:11px;font-size:.9rem">
+                    <img src="./logo.png" alt="">
+                </span>
+                <span>IVSS</span>
+            </a>
+
+            <span>Powering with Nature</span>
+
+            <span>
+                © <span id="year"></span> IVSS. All rights reserved.
+            </span>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+
+    <script>
+        // Footer year
+        const yearElement = document.getElementById("year");
+
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+
+        // Product quote form: prepares an email draft.
+        // Replace this address with the company's verified email.
+        const quoteForm = document.getElementById("productQuoteForm");
+
+        if (quoteForm) {
+            quoteForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const formData = new FormData(quoteForm);
+
+                const name = formData.get("name");
+                const email = formData.get("email");
+                const phone = formData.get("phone") || "Not provided";
+                const quantity = formData.get("quantity") || "Not specified";
+                const product = formData.get("product");
+                const message = formData.get("message");
+
+                const subject = encodeURIComponent(
+                    "Product Quote Request - " + product
+                );
+
+                const body = encodeURIComponent(
+                    "Product: " + product + "\n" +
+                    "Name: " + name + "\n" +
+                    "Email: " + email + "\n" +
+                    "Phone: " + phone + "\n" +
+                    "Estimated quantity: " + quantity + "\n\n" +
+                    "Project requirements:\n" + message
+                );
+
+                const feedback = document.getElementById("quoteFeedback");
+
+                feedback.textContent =
+                    "Opening your email application to prepare the inquiry.";
+
+                // Replace with the actual company email before publishing.
+                window.location.href =
+                    "mailto:info@your-company.com?subject=" +
+                    subject + "&body=" + body;
+            });
+        }
+    </script>
+
+</body>
+
+</html>

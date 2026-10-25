@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVSS | Projects Management</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+     
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        :root {
+            --green: #16845b;
+            --green-dark: #106846;
+            --lime: #c7e86b;
+            --sidebar: #102820;
+            --sidebar-muted: #a7bcb2;
+            --page: #f4f7f5;
+            --surface: #ffffff;
+            --text: #182821;
+            --muted: #748279;
+            --border: #e4ebe6;
+            --shadow: 0 8px 30px rgba(19, 51, 37, .055);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--page);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .sidebar {
+            width: 258px;
+            background: var(--sidebar);
+            color: white;
+            position: fixed;
+            inset: 0 auto 0 0;
+            display: flex;
+            flex-direction: column;
+            padding: 24px 16px;
+            z-index: 1000;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 10px 28px;
+            color: white;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: var(--lime);
+            color: #163b2b;
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .brand-title {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: .08em;
+        }
+
+        .brand-sub {
+            display: block;
+            color: var(--sidebar-muted);
+            font-size: 9px;
+            margin-top: 4px;
+        }
+
+        .nav-label {
+            color: #7e9b8d;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .13em;
+            padding: 12px;
+            text-transform: uppercase;
+        }
+
+        .side-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .side-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 12px;
+            color: var(--sidebar-muted);
+            border-radius: 11px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .side-link i {
+            font-size: 17px;
+            width: 22px;
+            text-align: center;
+        }
+
+        .side-link:hover,
+        .side-link.active {
+            background: rgba(255, 255, 255, .1);
+            color: white;
+        }
+
+        .side-link.active {
+            box-shadow: inset 3px 0 var(--lime);
+        }
+
+        .sidebar-bottom {
+            margin-top: auto;
+        }
+
+        .support-card {
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 14px;
+            padding: 14px;
+            margin: 8px 4px 15px;
+        }
+
+        .support-card strong {
+            font-size: 12px;
+        }
+
+        .support-card p {
+            color: var(--sidebar-muted);
+            font-size: 11px;
+            margin: 8px 0;
+        }
+
+        .support-card a {
+            color: var(--lime);
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .admin-mini {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 8px 0;
+            border-top: 1px solid rgba(255, 255, 255, .12);
+        }
+
+        .avatar {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #d9edbd;
+            color: #234b35;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .admin-mini strong {
+            display: block;
+            font-size: 12px;
+        }
+
+        .admin-mini small {
+            color: var(--sidebar-muted);
+            font-size: 10px;
+        }
+
+        .main {
+            margin-left: 258px;
+            min-height: 100vh;
+        }
+
+        .topbar {
+            height: 78px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            position: sticky;
+            top: 0;
+            z-index: 900;
+        }
+
+        .page-eyebrow {
+            color: var(--muted);
+            font-size: 11px;
+            margin-bottom: 4px;
+        }
+
+        .topbar h1 {
+            font-size: 21px;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .icon-button {
+            width: 39px;
+            height: 39px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--surface);
+            color: var(--text);
+            display: grid;
+            place-items: center;
+        }
+
+        .content {
+            padding: 28px 32px 38px;
+            max-width: 1600px;
+            margin: auto;
+        }
+
+        .welcome-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .welcome-row h2 {
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 0 6px;
+        }
+
+        .welcome-row p {
+            color: var(--muted);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .btn-ivss {
+            background: var(--green);
+            color: white;
+            border: 1px solid var(--green);
+            border-radius: 11px;
+            padding: 11px 15px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .btn-ivss:hover {
+            background: var(--green-dark);
+            color: white;
+        }
+
+        .btn-soft {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-radius: 11px;
+            padding: 10px 13px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .stat-card,
+        .panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-card {
+            padding: 19px;
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .stat-value {
+            font-size: 29px;
+            font-weight: 850;
+            margin: 14px 0 5px;
+        }
+
+        .stat-foot {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .panel {
+            margin-top: 22px;
+            padding: 22px;
+        }
+
+        .panel-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .panel-title {
+            font-size: 15px;
+            font-weight: 800;
+            margin: 0 0 4px;
+        }
+
+        .panel-subtitle {
+            font-size: 11px;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .searchbox {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--page);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            padding: 0 12px;
+            height: 42px;
+            min-width: 230px;
+            color: var(--muted);
+        }
+
+        .searchbox input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: var(--text);
+            font-size: 12px;
+        }
+
+        .table {
+            --bs-table-bg: transparent;
+            --bs-table-color: var(--text);
+            --bs-table-border-color: var(--border);
+            vertical-align: middle;
+        }
+
+        .table thead th {
+            color: var(--muted);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            padding: 14px 10px;
+            white-space: nowrap;
+        }
+
+        .table tbody td {
+            padding: 15px 10px;
+            font-size: 12px;
+        }
+
+        .project-name {
+            font-weight: 800;
+            font-size: 12px;
+        }
+
+        .project-id {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+            margin-top: 4px;
+        }
+
+        .project-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: #e2f5e9;
+            color: var(--green);
+            font-size: 19px;
+        }
+
+        .project-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 190px;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-radius: 20px;
+            padding: 6px 9px;
+            font-size: 10px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .status::before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .status-active {
+            color: #16845b;
+            background: #e3f6e9;
+        }
+
+        .status-planning {
+            color: #2876ca;
+            background: #e7f1ff;
+        }
+
+        .status-paused {
+            color: #a66b0b;
+            background: #fff1d6;
+        }
+
+        .status-completed {
+            color: #8054bd;
+            background: #f0e8ff;
+        }
+
+        .progress {
+            height: 5px;
+            background: var(--border);
+            border-radius: 20px;
+            min-width: 65px;
+        }
+
+        .progress-bar {
+            background: var(--green);
+            border-radius: 20px;
+        }
+
+        .table-action {
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            background: var(--surface);
+            color: var(--muted);
+        }
+
+        .table-action:hover {
+            color: var(--green);
+            border-color: var(--green);
+        }
+
+        .footer-note {
+            color: var(--muted);
+            font-size: 10px;
+            text-align: center;
+            padding-top: 25px;
+        }
+
+        .form-label {
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .form-control,
+        .form-select {
+            border-color: var(--border);
+            border-radius: 10px;
+            padding: 11px 12px;
+            font-size: 12px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 .2rem rgba(22, 132, 91, .12);
+        }
+
+        .modal-content {
+            border: 1px solid var(--border);
+            border-radius: 17px;
+        }
+
+        .modal-header,
+        .modal-footer {
+            border-color: var(--border);
+        }
+
+        @media (max-width: 991px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .topbar {
+                padding: 0 18px;
+            }
+
+            .content {
+                padding: 22px 16px;
+            }
+
+            .welcome-row {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .topbar h1 {
+                font-size: 17px;
+            }
+
+            .stat-card {
+                padding: 14px;
+            }
+
+            .stat-value {
+                font-size: 24px;
+            }
+
+            .panel {
+                padding: 16px;
+            }
+
+            .searchbox {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-shell">
+
+        <aside class="sidebar">
+            <a class="brand" href="#">
+                <span class="brand-mark">V</span>
+                <span>
+                    <span class="brand-title">IVSS</span>
+                    <span class="brand-sub">INFINITY VOGT SOLAR SERVICES</span>
+                </span>
+            </a>
+
+            <div class="nav-label">Overview</div>
+            <nav class="side-nav">
+                <a href="./index.html" class="side-link"><i class="bi bi-grid-1x2"></i> Dashboard</a>
+                <a href="./projects.html" class="side-link active"><i class="bi bi-buildings"></i> Projects <span
+                        class="badge rounded-pill text-bg-light ms-auto">12</span></a>
+                <a href="#" class="side-link"><i class="bi bi-sun"></i> Services</a>
+                <a href="#" class="side-link"><i class="bi bi-chat-left-text"></i> Inquiries</a>
+                <a href="#" class="side-link"><i class="bi bi-people"></i> Clients</a>
+            </nav>
+
+            <div class="nav-label mt-3">Manage</div>
+            <nav class="side-nav">
+                <a href="#" class="side-link"><i class="bi bi-file-earmark-text"></i> Website content</a>
+                <a href="#" class="side-link"><i class="bi bi-bar-chart-line"></i> Analytics</a>
+                <a href="#" class="side-link"><i class="bi bi-gear"></i> Settings</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="support-card">
+                    <strong>Need a hand?</strong>
+                    <p>Manage your website with confidence. Contact your technical team for support.</p>
+                    <a href="mailto:info@ivss.example">CONTACT SUPPORT <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+                <div class="admin-mini">
+                    <div class="avatar">AM</div>
+                    <div>
+                        <strong>Admin Manager</strong>
+                        <small>Super Admin</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="icon-button mobile-menu" id="menuToggle" aria-label="Open navigation"><i
+                            class="bi bi-list fs-5"></i></button>
+                    <div>
+                        <div class="page-eyebrow"><span data-i18n="breadcrumb">Workspace</span> / <span
+                                data-i18n="dashboard">Projects</span></div>
+                        <h1 data-i18n="dashboard">Projects Management</h1>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <label class="searchbox"><i class="bi bi-search"></i><input id="globalSearch" type="search"
+                            placeholder="Search projects, clients..." data-i18n-placeholder="searchPlaceholder"></label>
+                    <button class="icon-button" id="langToggle" title="Switch language"
+                        aria-label="Switch language"><span class="fw-bold small">ع</span></button>
+                    <button class="icon-button" id="themeToggle" title="Toggle dark mode"
+                        aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+                    <button class="icon-button" id="notificationButton" title="Notifications"
+                        aria-label="Notifications"><i class="bi bi-bell"></i><span
+                            class="notification-dot"></span></button>
+                </div>
+            </header>
+
+            <div class="content">
+
+                <section class="welcome-row">
+                    <div>
+                        <h2>Projects <span class="text-success">Workspace</span></h2>
+                        <p>Manage your solar projects, update details and track progress.</p>
+                    </div>
+                    <button class="btn-ivss" type="button" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        onclick="prepareCreate()">
+                        <i class="bi bi-plus-lg me-1"></i> Add New Project
+                    </button>
+                </section>
+
+                <section class="row g-3">
+                    <div class="col-6 col-xl-3">
+                        <article class="stat-card">
+                            <span class="stat-label">Total Projects</span>
+                            <div class="stat-value" id="totalProjects">12</div>
+                            <div class="stat-foot"><i class="bi bi-buildings me-1"></i> All registered projects</div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-xl-3">
+                        <article class="stat-card">
+                            <span class="stat-label">Active Projects</span>
+                            <div class="stat-value" id="activeProjects">6</div>
+                            <div class="stat-foot"><i class="bi bi-activity me-1"></i> Currently in progress</div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-xl-3">
+                        <article class="stat-card">
+                            <span class="stat-label">Completed</span>
+                            <div class="stat-value" id="completedProjects">4</div>
+                            <div class="stat-foot"><i class="bi bi-check-circle me-1"></i> Successfully delivered</div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-xl-3">
+                        <article class="stat-card">
+                            <span class="stat-label">In Planning</span>
+                            <div class="stat-value" id="planningProjects">2</div>
+                            <div class="stat-foot"><i class="bi bi-calendar-check me-1"></i> Upcoming installations
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="panel" id="projects">
+                    <div class="panel-head">
+                        <div>
+                            <h3 class="panel-title">All Projects</h3>
+                            <p class="panel-subtitle">View, search, edit or remove your projects.</p>
+                        </div>
+
+                        <div class="d-flex gap-2 flex-wrap">
+                            <label class="searchbox">
+                                <i class="bi bi-search"></i>
+                                <input type="search" id="projectSearch" placeholder="Search projects...">
+                            </label>
+
+                            <select class="form-select" id="statusFilter" style="width:auto;font-size:12px">
+                                <option value="">All Statuses</option>
+                                <option value="Active">Active</option>
+                                <option value="Planning">Planning</option>
+                                <option value="Paused">Paused</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table" id="projectsTable">
+                            <thead>
+                                <tr>
+                                    <th>Project</th>
+                                    <th>Type</th>
+                                    <th>Location</th>
+                                    <th>Progress</th>
+                                    <th>Status</th>
+                                    <th>Start Date</th>
+                                    <th class="text-end">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projectsBody">
+                                <tr data-name="Cairo Solar Farm" data-type="Utility-scale solar"
+                                    data-location="Cairo, Egypt" data-progress="78" data-status="Active"
+                                    data-date="2026-05-10">
+                                    <td>
+                                        <div class="project-cell">
+                                            <div class="project-icon"><i class="bi bi-sun"></i></div>
+                                            <div><span class="project-name">Cairo Solar Farm</span><span
+                                                    class="project-id">PRJ-001</span></div>
+                                        </div>
+                                    </td>
+                                    <td>Utility-scale solar</td>
+                                    <td>Cairo, Egypt</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="progress flex-grow-1">
+                                                <div class="progress-bar" style="width:78%"></div>
+                                            </div><small>78%</small>
+                                        </div>
+                                    </td>
+                                    <td><span class="status status-active">Active</span></td>
+                                    <td>10 May 2026</td>
+                                    <td class="text-end text-nowrap"><button class="table-action" title="Edit"
+                                            onclick="editProject(this)"><i class="bi bi-pencil"></i></button> <button
+                                            class="table-action" title="Delete" onclick="deleteProject(this)"><i
+                                                class="bi bi-trash"></i></button></td>
+                                </tr>
+                                <tr data-name="New Capital Offices" data-type="Commercial installation"
+                                    data-location="New Capital, Egypt" data-progress="54" data-status="Active"
+                                    data-date="2026-06-02">
+                                    <td>
+                                        <div class="project-cell">
+                                            <div class="project-icon"><i class="bi bi-buildings"></i></div>
+                                            <div><span class="project-name">New Capital Offices</span><span
+                                                    class="project-id">PRJ-002</span></div>
+                                        </div>
+                                    </td>
+                                    <td>Commercial installation</td>
+                                    <td>New Capital, Egypt</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="progress flex-grow-1">
+                                                <div class="progress-bar" style="width:54%"></div>
+                                            </div><small>54%</small>
+                                        </div>
+                                    </td>
+                                    <td><span class="status status-active">Active</span></td>
+                                    <td>02 Jun 2026</td>
+                                    <td class="text-end text-nowrap"><button class="table-action" title="Edit"
+                                            onclick="editProject(this)"><i class="bi bi-pencil"></i></button> <button
+                                            class="table-action" title="Delete" onclick="deleteProject(this)"><i
+                                                class="bi bi-trash"></i></button></td>
+                                </tr>
+                                <tr data-name="Alexandria Residence" data-type="Residential solar"
+                                    data-location="Alexandria, Egypt" data-progress="20" data-status="Planning"
+                                    data-date="2026-08-15">
+                                    <td>
+                                        <div class="project-cell">
+                                            <div class="project-icon"><i class="bi bi-house"></i></div>
+                                            <div><span class="project-name">Alexandria Residence</span><span
+                                                    class="project-id">PRJ-003</span></div>
+                                        </div>
+                                    </td>
+                                    <td>Residential solar</td>
+                                    <td>Alexandria, Egypt</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="progress flex-grow-1">
+                                                <div class="progress-bar" style="width:20%"></div>
+                                            </div><small>20%</small>
+                                        </div>
+                                    </td>
+                                    <td><span class="status status-planning">Planning</span></td>
+                                    <td>15 Aug 2026</td>
+                                    <td class="text-end text-nowrap"><button class="table-action" title="Edit"
+                                            onclick="editProject(this)"><i class="bi bi-pencil"></i></button> <button
+                                            class="table-action" title="Delete" onclick="deleteProject(this)"><i
+                                                class="bi bi-trash"></i></button></td>
+                                </tr>
+                                <tr data-name="Delta Industrial Plant" data-type="Industrial power"
+                                    data-location="Mansoura, Egypt" data-progress="100" data-status="Completed"
+                                    data-date="2026-01-20">
+                                    <td>
+                                        <div class="project-cell">
+                                            <div class="project-icon"><i class="bi bi-lightning-charge"></i></div>
+                                            <div><span class="project-name">Delta Industrial Plant</span><span
+                                                    class="project-id">PRJ-004</span></div>
+                                        </div>
+                                    </td>
+                                    <td>Industrial power</td>
+                                    <td>Mansoura, Egypt</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="progress flex-grow-1">
+                                                <div class="progress-bar" style="width:100%"></div>
+                                            </div><small>100%</small>
+                                        </div>
+                                    </td>
+                                    <td><span class="status status-completed">Completed</span></td>
+                                    <td>20 Jan 2026</td>
+                                    <td class="text-end text-nowrap"><button class="table-action" title="Edit"
+                                            onclick="editProject(this)"><i class="bi bi-pencil"></i></button> <button
+                                            class="table-action" title="Delete" onclick="deleteProject(this)"><i
+                                                class="bi bi-trash"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="emptyState" class="text-center text-secondary py-4 d-none">No projects found.</div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2">
+                        <small class="text-secondary" id="resultsCount">Showing 4 projects</small>
+                        <small class="text-secondary">Demo data · Connect to your backend for persistent storage</small>
+                    </div>
+                </section>
+
+                <div class="footer-note">© 2026 IVSS · Infinity Vogt Solar Services · Admin workspace</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Create / Edit Project Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form id="projectForm" onsubmit="saveProject(event)">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="modal-title fw-bold" id="projectModalTitle">Add New Project</h5>
+                            <small class="text-secondary">Enter the project information below.</small>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <input type="hidden" id="editingRow">
+
+                        <div class="mb-3">
+                            <label for="projectName" class="form-label">Project Name *</label>
+                            <input type="text" class="form-control" id="projectName" maxlength="100"
+                                placeholder="e.g. Giza Solar Installation" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="projectType" class="form-label">Project Type *</label>
+                            <select class="form-select" id="projectType" required>
+                                <option value="Utility-scale solar">Utility-scale solar</option>
+                                <option value="Commercial installation">Commercial installation</option>
+                                <option value="Residential solar">Residential solar</option>
+                                <option value="Industrial power">Industrial power</option>
+                                <option value="Maintenance">Maintenance</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="projectLocation" class="form-label">Location *</label>
+                            <input type="text" class="form-control" id="projectLocation" maxlength="100"
+                                placeholder="e.g. Giza, Egypt" required>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="projectProgress" class="form-label">Progress (%)</label>
+                                <input type="number" class="form-control" id="projectProgress" min="0" max="100"
+                                    value="0" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="projectStatus" class="form-label">Status *</label>
+                                <select class="form-select" id="projectStatus" required>
+                                    <option value="Planning">Planning</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Paused">Paused</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+                            <label for="projectDate" class="form-label">Start Date *</label>
+                            <input type="date" class="form-control" id="projectDate" required>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn-soft" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn-ivss"><i class="bi bi-check2 me-1"></i> Save Project</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-body text-center p-4">
+                    <div class="project-icon mx-auto mb-3" style="background:#fde8e7;color:#c0392b">
+                        <i class="bi bi-trash"></i>
+                    </div>
+                    <h5 class="fw-bold">Delete Project?</h5>
+                    <p class="text-secondary small">Are you sure you want to delete this project? This action cannot be
+                        undone.</p>
+                    <div class="d-flex gap-2 justify-content-center">
+                        <button type="button" class="btn-soft" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger btn-sm px-3"
+                            onclick="confirmDelete()">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="appToast" class="toast border-0" role="status" aria-live="polite" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMessage">Done</div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const projectModal = bootstrap.Modal.getOrCreateInstance(document.getElementById('projectModal'));
+        const deleteModal = bootstrap.Modal.getOrCreateInstance(document.getElementById('deleteModal'));
+        const toast = bootstrap.Toast.getOrCreateInstance(document.getElementById('appToast'), { delay: 2500 });
+
+        let rowToDelete = null;
+        let nextProjectNumber = 5;
+
+        function notify(message) {
+            document.getElementById('toastMessage').textContent = message;
+            toast.show();
+        }
+
+        function prepareCreate() {
+            document.getElementById('projectForm').reset();
+            document.getElementById('editingRow').value = '';
+            document.getElementById('projectProgress').value = 0;
+            document.getElementById('projectStatus').value = 'Planning';
+            document.getElementById('projectModalTitle').textContent = 'Add New Project';
+        }
+
+        function editProject(button) {
+            const row = button.closest('tr');
+
+            document.getElementById('editingRow').value = Array.from(row.parentNode.children).indexOf(row);
+            document.getElementById('projectName').value = row.dataset.name;
+            document.getElementById('projectType').value = row.dataset.type;
+            document.getElementById('projectLocation').value = row.dataset.location;
+            document.getElementById('projectProgress').value = row.dataset.progress;
+            document.getElementById('projectStatus').value = row.dataset.status;
+            document.getElementById('projectDate').value = row.dataset.date;
+            document.getElementById('projectModalTitle').textContent = 'Edit Project';
+
+            projectModal.show();
+        }
+
+        function saveProject(event) {
+            event.preventDefault();
+
+            const editingIndex = document.getElementById('editingRow').value;
+            const name = document.getElementById('projectName').value.trim();
+            const type = document.getElementById('projectType').value;
+            const location = document.getElementById('projectLocation').value.trim();
+            const progress = Math.min(100, Math.max(0, Number(document.getElementById('projectProgress').value)));
+            let status = document.getElementById('projectStatus').value;
+            const date = document.getElementById('projectDate').value;
+
+            if (!name || !location || !date) return;
+
+            if (progress === 100) status = 'Completed';
+
+            const tbody = document.getElementById('projectsBody');
+            let row;
+
+            if (editingIndex !== '') {
+                row = tbody.children[Number(editingIndex)];
+                if (!row) {
+                    notify('Could not find this project.');
+                    return;
+                }
+            } else {
+                row = document.createElement('tr');
+                tbody.appendChild(row);
+            }
+
+            row.dataset.name = name;
+            row.dataset.type = type;
+            row.dataset.location = location;
+            row.dataset.progress = progress;
+            row.dataset.status = status;
+            row.dataset.date = date;
+
+            const id = row.querySelector('.project-id')?.textContent || `PRJ-${String(nextProjectNumber++).padStart(3, '0')}`;
+            const icon = type.includes('Residential') ? 'bi-house' :
+                type.includes('Commercial') ? 'bi-buildings' :
+                    type.includes('Industrial') ? 'bi-lightning-charge' : 'bi-sun';
+
+            const statusClass = {
+                Active: 'status-active',
+                Planning: 'status-planning',
+                Paused: 'status-paused',
+                Completed: 'status-completed'
+            }[status];
+
+            const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-GB', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric'
+            });
+
+            row.innerHTML = `
+            <td>
+                <div class="project-cell">
+                    <div class="project-icon"><i class="bi ${icon}"></i></div>
+                    <div>
+                        <span class="project-name"></span>
+                        <span class="project-id"></span>
+                    </div>
+                </div>
+            </td>
+            <td class="type-cell"></td>
+            <td class="location-cell"></td>
+            <td>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="progress flex-grow-1">
+                        <div class="progress-bar" style="width:${progress}%"></div>
+                    </div>
+                    <small>${progress}%</small>
+                </div>
+            </td>
+            <td><span class="status ${statusClass}">${status}</span></td>
+            <td>${formattedDate}</td>
+            <td class="text-end text-nowrap">
+                <button class="table-action" title="Edit" onclick="editProject(this)"><i class="bi bi-pencil"></i></button>
+                <button class="table-action" title="Delete" onclick="deleteProject(this)"><i class="bi bi-trash"></i></button>
+            </td>
+        `;
+
+            row.querySelector('.project-name').textContent = name;
+            row.querySelector('.project-id').textContent = id;
+            row.querySelector('.type-cell').textContent = type;
+            row.querySelector('.location-cell').textContent = location;
+
+            projectModal.hide();
+            updateDashboard();
+            filterProjects();
+            notify(editingIndex === '' ? 'Project added successfully.' : 'Project updated successfully.');
+        }
+
+        function deleteProject(button) {
+            rowToDelete = button.closest('tr');
+            deleteModal.show();
+        }
+
+        function confirmDelete() {
+            if (rowToDelete) {
+                rowToDelete.remove();
+                rowToDelete = null;
+                updateDashboard();
+                filterProjects();
+                deleteModal.hide();
+                notify('Project deleted successfully.');
+            }
+        }
+
+        function filterProjects() {
+            const query = document.getElementById('projectSearch').value.toLowerCase().trim();
+            const status = document.getElementById('statusFilter').value;
+            const rows = Array.from(document.querySelectorAll('#projectsBody tr'));
+            let visible = 0;
+
+            rows.forEach(row => {
+                const matchesQuery = row.innerText.toLowerCase().includes(query);
+                const matchesStatus = !status || row.dataset.status === status;
+                const show = matchesQuery && matchesStatus;
+
+                row.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            document.getElementById('emptyState').classList.toggle('d-none', visible !== 0);
+            document.getElementById('resultsCount').textContent = `Showing ${visible} project${visible === 1 ? '' : 's'}`;
+        }
+
+        function updateDashboard() {
+            const rows = Array.from(document.querySelectorAll('#projectsBody tr'));
+            document.getElementById('totalProjects').textContent = rows.length;
+            document.getElementById('activeProjects').textContent = rows.filter(row => row.dataset.status === 'Active').length;
+            document.getElementById('completedProjects').textContent = rows.filter(row => row.dataset.status === 'Completed').length;
+            document.getElementById('planningProjects').textContent = rows.filter(row => row.dataset.status === 'Planning').length;
+        }
+
+        document.getElementById('projectSearch').addEventListener('input', filterProjects);
+        document.getElementById('statusFilter').addEventListener('change', filterProjects);
+    </script>
+</body>
+
+</html>
